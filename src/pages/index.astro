@@ -1,0 +1,148 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+// Import Eduroots images
+import heroImage from "@images/eduroots-tableau-bord-famille-mobile.webp";
+import featureImage from "@images/eduroots-og-image.jpg";
+import avatar1 from "@images/avatars/avatar1.jpg";
+import avatar2 from "@images/avatars/avatar2.jpg";
+import avatar3 from "@images/avatars/avatar3.jpg";
+import avatar4 from "@images/avatars/avatar4.jpg";
+import dashboard from "@images/dashboard-image.avif";
+import construction from "@images/construction-image.avif";
+import tools from "@images/automated-tools.avif";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import { partnersData } from "@/data_files/constants";
+
+const pageTitle = "Accueil | Eduroots - Plateforme de gestion pour les mosquées";
+
+const avatarSrcs: Array<any> = [
+  avatar1 as any,
+  avatar2 as any,
+  avatar3 as any,
+  avatar4 as any,
+];
+---
+
+<MainLayout title={pageTitle}>
+  <AnnouncementBanner
+    btnId="dismiss-button"
+    btnTitle="Découvrir Eduroots sur GitHub"
+    url="https://github.com/koala819/eduroots"
+  />
+
+  <HeroSection
+    title=`Équipez vos projets avec <span class="text-primary dark:text-primary-light">Eduroots</span>`
+    subTitle="Plateforme de gestion pour les mosquées pensée pour les écoles associatives, cours du soir et mosquées."
+    primaryBtn="Demander une démo"
+    primaryBtnURL="#demo"
+    secondaryBtn="Découvrir les fonctionnalités"
+    secondaryBtnURL="#features"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.9</span> / 5`
+    starCount={5}
+    reviews=`D'après <span class="font-bold">200+</span> utilisateurs`
+    src={heroImage}
+    alt="Interface mobile Eduroots pour la gestion scolaire"
+  />
+
+  <ClientsSection
+    title="Adopté par les écoles innovantes"
+    subTitle="Rejoignez les établissements qui ont choisi l'efficacité avec Eduroots."
+    partners={partnersData}
+  />
+
+  <FeaturesGeneral
+    id="features"
+    title="Répondre aux besoins éducatifs modernes"
+    subTitle="Eduroots simplifie la gestion scolaire avec des outils pensés pour les enseignants, parents et administrateurs. Du suivi des élèves à la communication, tout est centralisé pour gagner du temps."
+    src={featureImage}
+    alt="Interface Eduroots montrant les différents modules"
+    features={features}
+  />
+
+  <FeaturesNavs
+    title=`Personnalisez <span class="text-primary dark:text-primary-light">Eduroots</span> selon les besoins spécifiques de votre établissement.`
+    tabs={[
+      {
+        heading: "Gestion des élèves",
+        content:
+          "Centralisez toutes les informations de vos élèves : notes, absences, comportement, et bien plus. Interface intuitive pour un suivi efficace de la progression de chaque apprenant.",
+        svg: "users",
+        src: tools,
+        alt: "Interface de gestion des élèves Eduroots",
+        first: true,
+      },
+      {
+        heading: "Tableaux de bord intuitifs",
+        content:
+          "Naviguez facilement avec les tableaux de bord Eduroots. Configurez et supervisez votre établissement en toute simplicité, avec des interfaces conçues pour une gestion fluide.",
+        svg: "dashboard",
+        src: dashboard,
+        alt: "Tableau de bord administratif Eduroots",
+        second: true,
+      },
+      {
+        heading: "Communication intégrée",
+        content:
+          "Simplifiez les échanges entre enseignants, parents et administration. Messagerie intégrée, notifications automatiques et système d'alertes pour une communication efficace.",
+        svg: "mail",
+        src: construction,
+        alt: "Système de messagerie intégré Eduroots",
+      },
+    ]}
+  />
+
+  <TestimonialsSection
+    title="Simplifiez votre gestion scolaire"
+    subTitle="Avec Eduroots, démarrez rapidement avec une configuration simple. Découvrez la gestion scolaire réinventée."
+    testimonials={[
+      {
+        content:
+          "Eduroots a révolutionné notre façon de gérer l'école. L'installation est immédiate et les fonctionnalités sont parfaitement adaptées aux besoins d'une école associative. Un vrai gain de temps !",
+        author: "Fatima Benali",
+        role: "Directrice | École Al-Firdaws",
+        avatarSrc: avatar2 as any,
+      },
+    ]}
+    statistics={[
+      {
+        count: "200+",
+        description:
+          "établissements utilisent Eduroots — des écoles associatives aux grandes institutions",
+      },
+      {
+        count: "50%",
+        description:
+          "de temps économisé sur les tâches administratives avec Eduroots",
+      },
+      {
+        count: "25%",
+        description:
+          "d'amélioration de la communication parents-école rapportée par nos utilisateurs",
+      },
+      {
+        count: "99%",
+        description: "de satisfaction utilisateur grâce à notre interface intuitive",
+      },
+    ]}
+  />
+
+  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+
+  <HeroSectionAlt
+    title="Construisons l'éducation de demain"
+    subTitle="Eduroots est une plateforme open source, développée avec passion pour révolutionner la gestion scolaire."
+    url="https://github.com/eduroots/eduroots"
+  />
+</MainLayout>

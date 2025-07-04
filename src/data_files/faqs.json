@@ -1,0 +1,29 @@
+{
+  "subTitle": "Posez-nous toutes vos questions sur Eduroots, nous vous apportons des réponses concrètes.",
+  "faqs": [
+    {
+      "question": "Quelles fonctionnalités sont incluses dans l'offre École ?",
+      "answer": "L'offre École comprend la gestion des élèves, le suivi des absences, la messagerie intégrée, les plannings de cours et les outils de communication avec les parents. C'est une solution complète pour les petites écoles et cours associatifs."
+    },
+    {
+      "question": "Puis-je migrer de l'offre École vers l'offre Établissement ?",
+      "answer": "Absolument ! Vous pouvez passer à l'offre Établissement à tout moment pour accéder à des fonctionnalités avancées, un support prioritaire et des modules supplémentaires. Contactez notre équipe pour une transition en douceur."
+    },
+    {
+      "question": "Quels sont les avantages de l'offre Établissement ?",
+      "answer": "L'offre Établissement inclut des tableaux de bord avancés, la gestion multi-sites, des rapports détaillés, et un support prioritaire. Idéale pour les établissements de grande taille avec des besoins spécifiques."
+    },
+    {
+      "question": "Quel type de support puis-je attendre ?",
+      "answer": "Tous nos clients bénéficient d'un support par email dédié. Avec l'offre École, vous recevez notre support standard, tandis que l'offre Établissement vous donne accès au support prioritaire avec des temps de réponse plus rapides."
+    },
+    {
+      "question": "Les données sont-elles sécurisées et confidentielles ?",
+      "answer": "Absolument. Eduroots respecte le RGPD et toutes les réglementations sur la protection des données. Vos informations sont chiffrées et stockées de manière sécurisée. Nous ne partageons jamais vos données avec des tiers."
+    },
+    {
+      "question": "Eduroots propose-t-elle des solutions pour les grandes institutions ?",
+      "answer": "Oui, nos Solutions Entreprise sont conçues pour les grands établissements nécessitant des services complets. Nous proposons consultation, formation, intégration personnalisée et support dédié. Contactez-nous pour un devis sur mesure."
+    }
+  ]
+}

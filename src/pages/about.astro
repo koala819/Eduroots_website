@@ -1,0 +1,331 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import IconBlock from "@components/ui/blocks/IconBlock.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import Avatar from "@components/ui/avatars/Avatar.astro";
+// import XavierImage from "@images/Xavier-Genolhac.webp";
+
+const pageTitle = "À propos | Eduroots - Notre approche personnalisée";
+---
+
+<MainLayout title={pageTitle}>
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Simplifiez la gestion de votre <span class="text-primary">école associative</span>
+        </h1>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 max-w-3xl mx-auto">
+          Une application web conçue avec et pour les écoles associatives, pour suivre les élèves,
+          fluidifier l'organisation et impliquer les familles.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <PrimaryCTA href="#contact" text="Découvrir notre approche" />
+          <SecondaryCTA href="https://github.com/koala819/eduroots" text="Voir le code source" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problématique Section -->
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          La gestion des cours mérite mieux que des fichiers Excel
+        </h2>
+        <div class="prose prose-lg max-w-none dark:prose-invert">
+          <p class="text-lg mb-6">
+            Aujourd'hui, les écoles associatives, les mosquées ou les structures éducatives indépendantes
+            jonglent avec beaucoup d'outils peu adaptés : formulaires papiers, fichier Excel partagé,
+            des messages WhatsApp...
+          </p>
+          <p class="text-lg mb-8">
+            Ces méthodes, bien que familières donnent l'impression d'une certaine facilité. Pourtant
+            elles génèrent de la confusion avec une perte de temps et un manque de visibilité pour
+            les équipes pédagogiques, les parents et les responsables.
+          </p>
+          <div class="bg-primary/10 border-l-4 border-primary p-6 rounded-r-lg">
+            <p class="text-lg font-medium">
+              Eduroots est né de ce constat et a une ambition simple et claire : vouloir simplifier
+              la gestion quotidienne des cours et faciliter le travail pour chaque partie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freins identifiés Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          Des freins identifiés sur le terrain
+        </h2>
+        <p class="text-lg text-center mb-12 text-neutral-600 dark:text-neutral-400">
+          En intervenant directement dans des structures comme la vôtre, j'identifie les points de
+          friction pour adapter Eduroots :
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <IconBlock
+            icon="clock"
+            title="Perte de temps"
+            description="Gestion des absences, des retards ou du comportement"
+          />
+          <IconBlock
+            icon="eye"
+            title="Manque de visibilité"
+            description="Absence d'une vision claire sur la progression des élèves"
+          />
+          <IconBlock
+            icon="database"
+            title="Données dispersées"
+            description="Google Sheets, feuilles, WhatsApp, ..."
+          />
+          <IconBlock
+            icon="message-circle"
+            title="Communication complexe"
+            description="Communication parent-équipe pédagogique compliquée"
+          />
+          <IconBlock
+            icon="tools"
+            title="Outils inadaptés"
+            description="Outils numériques peu adaptés à votre réalité de terrain"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Un outil pensé pour et avec les associations éducatives
+        </h2>
+        <div class="prose prose-lg max-w-none dark:prose-invert mb-8">
+          <p class="text-lg">
+            Eduroots est une application web légère, pensée dès le départ pour les écoles associatives.
+            C'est une solution clé-en-main, simple à prendre en main, évolutive et ouverte (open source).
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Suivi complet des élèves</h3>
+            <p>Absences, retards, comportement et notes de chaque élève</p>
+          </div>
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Gestion simplifiée</h3>
+            <p>Groupes, niveaux et enseignants facilement</p>
+          </div>
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Accès parents</h3>
+            <p>Tableau de bord clair pour les familles</p>
+          </div>
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold mb-4">Centralisation sécurisée</h3>
+            <p>Données centralisées de manière sécurisée</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg font-medium text-primary">
+            Avec Eduroots, ayez moins de tâches manuelles pour consacrer le plus de temps possible à l'essentiel : l'éducation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accompagnement Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Un accompagnement de A à Z, sur mesure
+        </h2>
+        <div class="prose prose-lg max-w-none dark:prose-invert mb-8">
+          <p class="text-lg">
+            Je ne vous livre pas juste un outil. Je vous accompagne dans sa mise en place,
+            son adaptation et son appropriation.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">1</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Échange personnalisé</h3>
+            <p>Vos pratiques réelles, pas de jargon, juste vos besoins concrets</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">2</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Démonstration adaptée</h3>
+            <p>Démonstration personnalisée d'Eduroots avec vos cas d'usage</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">3</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Mise en place</h3>
+            <p>Mise en place de l'outil dans votre structure</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">4</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Formation et suivi</h3>
+            <p>Suivi humain et évolutions selon vos retours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cas d'usage Section -->
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Mosquée Al'Ihsane
+        </h2>
+        <div class="bg-white dark:bg-neutral-800 p-8 rounded-lg shadow-sm">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Contexte</h3>
+              <p class="text-neutral-600 dark:text-neutral-400">
+                La mosquée de Colomiers avait besoin de suivre plus de 400 élèves avec une
+                trentaine d'enseignants bénévoles et un bureau administratif peu technophile.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Mise en place d'Eduroots</h3>
+              <ul class="text-neutral-600 dark:text-neutral-400 space-y-2">
+                <li>• Automatisation de la gestion des groupes</li>
+                <li>• Gestion des absences et du suivi des élèves</li>
+                <li>• Accès web sécurisé pour chaque membre</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Résultat</h3>
+              <ul class="text-neutral-600 dark:text-neutral-400 space-y-2">
+                <li>• Gain de temps sur la gestion hebdomadaire</li>
+                <li>• Meilleure implication des familles</li>
+                <li>• Zéro dépendance à des outils propriétaires</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Xavier Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Pourquoi Moi ?
+        </h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-shrink-0">
+            <!-- <Avatar
+              src={XavierImage}
+              alt="Xavier Genolhac"
+              size="lg"
+            /> -->
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold mb-4">Xavier GENOLHAC</h3>
+            <p class="text-lg mb-6">
+              Je suis un développeur engagé. Je ne suis ni une agence, ni une plateforme impersonnelle.
+              Je suis un développeur indépendant et engagé aux côtés des structures éducatives locales.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-semibold mb-2">Expérience</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Plus de 16 ans d'expérience sur le terrain (FREE et freelance)
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Technologies</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Outils modernes (Next.js, Astro, Sanity, TypeScript)
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Engagement</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Sensibilité pour le monde associatif
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Approche</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Outils ouverts, transparents et durables
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+          Et maintenant ?
+        </h2>
+        <h3 class="text-2xl font-semibold mb-8">
+          Découvrir, tester, s'équiper
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white/10 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-4">1. Préparation</h4>
+            <p>Je vous fournis un document Excel modèle que vous me retournez pour réaliser une démo</p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-4">2. Démonstration</h4>
+            <p>Je me déplace sur Toulouse et dans un rayon de 20 km pour une démo de 2h avec vos équipes</p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-4">3. Mise en place</h4>
+            <p>En une semaine, Eduroots est configuré pour votre établissement avec vos données</p>
+          </div>
+        </div>
+
+        <div class="bg-white/10 p-8 rounded-lg">
+          <h4 class="text-2xl font-semibold mb-6">Contactez-moi</h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-lg mb-2">
+                <strong>Téléphone :</strong> 06 76 26 30 24
+              </p>
+              <p class="text-sm opacity-90">WhatsApp, Telegram</p>
+            </div>
+            <div>
+              <p class="text-lg mb-2">
+                <strong>Email :</strong> x.genolhac@gmail.com
+              </p>
+              <p class="text-sm opacity-90">Réponse rapide garantie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import logoBlanc from "@images/Logo-blanc.webp";
+---
+
+<div class="flex items-center gap-2 select-none">
+  <Image
+    src={logoBlanc}
+    alt="Logo Eduroots"
+    class="h-8 w-auto"
+    style="min-width: 32px;"
+    draggable={false}
+  />
+  <span class="font-bold text-xl text-neutral-800 dark:text-neutral-200 tracking-tight">Eduroots</span>
+</div>

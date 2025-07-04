@@ -1,0 +1,424 @@
+---
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import Icon from "@components/ui/icons/Icon.astro";
+
+const { pricing, id } = Astro.props;
+---
+
+<section
+  id={id}
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <!-- Section heading -->
+  <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+    <h2
+      class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+    >
+      {pricing.title}
+    </h2>
+    <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      {pricing.subTitle}
+    </p>
+  </div>
+
+  <!-- Interactive Pricing Calculator -->
+  <div class="mx-auto max-w-4xl">
+        <!-- Billing Toggle -->
+    <div class="mb-8 flex items-center justify-center">
+      <div class="bg-muted rounded-lg p-1 flex items-center dark:bg-muted/50">
+        <button
+          id="monthly-btn"
+          class="px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 bg-white shadow-sm text-primary border border-primary/20 dark:bg-background dark:text-primary dark:border-primary/30"
+        >
+          {pricing.billingToggle.monthly}
+        </button>
+        <button
+          id="yearly-btn"
+          class="px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 text-muted-foreground hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+        >
+          {pricing.billingToggle.yearly}
+          <span class="ml-2 inline-flex items-center rounded-full bg-success/20 px-2 py-0.5 text-xs font-medium text-success dark:bg-success/30">
+            {pricing.billingToggle.yearlySavings}
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Student Count Slider -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between mb-4">
+        <label for="student-slider" class="text-lg font-medium text-neutral-800 dark:text-neutral-200">
+          {pricing.sliderLabel}
+        </label>
+        <span id="student-count" class="text-2xl font-bold text-primary">
+          50
+        </span>
+      </div>
+
+      <!-- Custom slider container -->
+      <div class="relative">
+        <input
+          id="student-slider"
+          type="range"
+          min="0"
+          max="1000"
+          value="50"
+          step="1"
+          class="absolute inset-0 w-full h-2 opacity-0 cursor-pointer z-10"
+        />
+        <!-- Visible thumb overlay -->
+        <div id="slider-thumb" class="absolute top-1/2 w-5 h-5 bg-primary rounded-full border-2 border-white shadow-lg transform -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20" style="left: 5%"></div>
+        <div class="h-2 bg-muted rounded-lg relative">
+          <div id="progress-fill" class="h-2 bg-gradient-to-r from-primary to-primary-light rounded-lg transition-all duration-300" style="width: 5%"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Pack 50 -->
+      <div class="relative rounded-xl border-2 border-primary/20 bg-primary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-primary/20 dark:border-primary/40 dark:shadow-lg" data-pack="50">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-primary">
+            {pricing.packs.pack50.name}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {pricing.packs.pack50.description}
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex items-baseline">
+            <span id="price-50" class="text-3xl font-bold text-primary">84.00</span>
+            <span class="ml-1 text-lg text-primary">€</span>
+            <span id="period-50" class="ml-2 text-sm text-muted-foreground">/mois</span>
+          </div>
+          <div class="mt-2">
+            <span id="price-per-student-50" class="text-sm text-muted-foreground">
+              Seulement 1.68€ par élève
+            </span>
+          </div>
+        </div>
+
+        <ul class="mb-6 space-y-2">
+          {pricing.packs.pack50.features.map((feature: string) => (
+            <li class="flex items-center gap-2 text-sm text-muted-foreground">
+              <Icon name="checkCircle" class="h-4 w-4 text-primary" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="w-full">
+          <PrimaryCTA title={pricing.ctaText} url={pricing.ctaLink} noArrow={true} />
+        </div>
+      </div>
+
+      <!-- Pack 250 -->
+      <div class="relative rounded-xl border-2 border-secondary/20 bg-secondary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-secondary/20 dark:border-secondary/40 dark:shadow-lg" data-pack="250">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-secondary">
+            {pricing.packs.pack250.name}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {pricing.packs.pack250.description}
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex items-baseline">
+            <span id="price-250" class="text-3xl font-bold text-secondary">240.00</span>
+            <span class="ml-1 text-lg text-secondary">€</span>
+            <span id="period-250" class="ml-2 text-sm text-muted-foreground">/mois</span>
+          </div>
+          <div class="mt-2">
+            <span id="price-per-student-250" class="text-sm text-muted-foreground">
+              Seulement 0.96€ par élève
+            </span>
+          </div>
+        </div>
+
+        <ul class="mb-6 space-y-2">
+          {pricing.packs.pack250.features.map((feature: string) => (
+            <li class="flex items-center gap-2 text-sm text-muted-foreground">
+              <Icon name="checkCircle" class="h-4 w-4 text-secondary" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="w-full">
+          <PrimaryCTA title={pricing.ctaText} url={pricing.ctaLink} noArrow={true} />
+        </div>
+      </div>
+
+      <!-- Pack 500 -->
+      <div class="relative rounded-xl border-2 border-accent/20 bg-accent/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-accent/20 dark:border-accent/40 dark:shadow-lg" data-pack="500">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-accent">
+            {pricing.packs.pack500.name}
+          </h3>
+          <p class="text-sm text-muted-foreground">
+            {pricing.packs.pack500.description}
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex items-baseline">
+            <span id="price-500" class="text-3xl font-bold text-accent">360.00</span>
+            <span class="ml-1 text-lg text-accent">€</span>
+            <span id="period-500" class="ml-2 text-sm text-muted-foreground">/mois</span>
+          </div>
+          <div class="mt-2">
+            <span id="price-per-student-500" class="text-sm text-muted-foreground">
+              Seulement 0.72€ par élève
+            </span>
+          </div>
+        </div>
+
+        <ul class="mb-6 space-y-2">
+          {pricing.packs.pack500.features.map((feature: string) => (
+            <li class="flex items-center gap-2 text-sm text-muted-foreground">
+              <Icon name="checkCircle" class="h-4 w-4 text-accent" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="w-full">
+          <PrimaryCTA title={pricing.ctaText} url={pricing.ctaLink} noArrow={true} />
+        </div>
+      </div>
+    </div>
+
+    <!-- Note -->
+    <div class="mt-8 text-center">
+      <p class="text-sm text-muted-foreground">
+        {pricing.note}
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom slider styling */
+  #student-slider {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  #student-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: 2px solid var(--color-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #student-slider::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: 2px solid var(--color-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<script>
+  // Pricing data
+  const pricingData = {
+    pack50: {
+      monthly: { base: 84, perStudent: 1.68, maxStudents: 50 },
+      yearly: { base: 504, perStudent: 0.84, maxStudents: 50 }
+    },
+    pack250: {
+      monthly: { base: 240, perStudent: 0.96, maxStudents: 250 },
+      yearly: { base: 1440, perStudent: 0.48, maxStudents: 250 }
+    },
+    pack500: {
+      monthly: { base: 360, perStudent: 0.72, maxStudents: 500 },
+      yearly: { base: 2160, perStudent: 0.36, maxStudents: 500 }
+    }
+  };
+
+  // DOM elements
+  const studentSlider = document.getElementById('student-slider') as HTMLInputElement;
+  const studentCount = document.getElementById('student-count');
+  const monthlyBtn = document.getElementById('monthly-btn');
+  const yearlyBtn = document.getElementById('yearly-btn');
+  const progressFill = document.getElementById('progress-fill') as HTMLElement;
+  const sliderThumb = document.getElementById('slider-thumb') as HTMLElement;
+
+  // Price elements
+  const priceElements = {
+    50: document.getElementById('price-50'),
+    250: document.getElementById('price-250'),
+    500: document.getElementById('price-500')
+  };
+
+  const periodElements = {
+    50: document.getElementById('period-50'),
+    250: document.getElementById('period-250'),
+    500: document.getElementById('period-500')
+  };
+
+  const pricePerStudentElements = {
+    50: document.getElementById('price-per-student-50'),
+    250: document.getElementById('price-per-student-250'),
+    500: document.getElementById('price-per-student-500')
+  };
+
+  let isYearly = false;
+
+    // Calculate price for a pack
+  function calculatePrice(pack: keyof typeof pricingData, studentCount: number) {
+    const packData = pricingData[pack];
+    const billing = isYearly ? packData.yearly : packData.monthly;
+
+    if (studentCount <= billing.maxStudents) {
+      return billing.base;
+    } else {
+      const extraStudents = studentCount - billing.maxStudents;
+      return billing.base + (extraStudents * billing.perStudent);
+    }
+  }
+
+  // Calculate price per student
+  function calculatePricePerStudent(pack: keyof typeof pricingData, studentCount: number) {
+    const totalPrice = calculatePrice(pack, studentCount);
+    return (totalPrice / studentCount).toFixed(2);
+  }
+
+  // Get recommended pack based on student count
+  function getRecommendedPack(studentCount: number) {
+    if (studentCount === 0) return null; // No recommendation for 0 students
+    if (studentCount < 250) return '50';
+    if (studentCount < 500) return '250';
+    return '500';
+  }
+
+        // Update all prices
+  function updatePrices() {
+    const students = parseInt(studentSlider.value);
+
+    if (studentCount) {
+      studentCount.textContent = students.toString();
+    }
+
+                // Update slider background with correct percentage calculation
+    const minStudents = 0;
+    const maxStudents = 1000;
+    const percentage = Math.min(100, Math.max(0, ((students - minStudents) / (maxStudents - minStudents)) * 100));
+
+            // Debug: log the values to see what's happening
+    console.log(`Students: ${students}, Percentage: ${percentage}%`);
+
+    // Update the progress fill bar
+    if (progressFill) {
+      progressFill.style.width = `${percentage}%`;
+    }
+
+    // Update the slider thumb position
+    if (sliderThumb) {
+      sliderThumb.style.left = `${percentage}%`;
+    }
+
+    // Get recommended pack
+    const recommendedPack = getRecommendedPack(students);
+
+    // Update prices for each pack
+    Object.keys(pricingData).forEach((packKey) => {
+      const pack = packKey as keyof typeof pricingData;
+      const packNumber = pack.replace('pack', '') as '50' | '250' | '500';
+      const totalPrice = calculatePrice(pack, students);
+      const pricePerStudent = calculatePricePerStudent(pack, students);
+
+      // Update price display
+      if (priceElements[packNumber]) {
+        priceElements[packNumber]!.textContent = totalPrice.toFixed(2);
+      }
+
+      // Update period display
+      if (periodElements[packNumber]) {
+        periodElements[packNumber]!.textContent = isYearly ? '/an' : '/mois';
+      }
+
+      // Update price per student display
+      if (pricePerStudentElements[packNumber]) {
+        const packData = pricingData[pack];
+        const billing = isYearly ? packData.yearly : packData.monthly;
+        const basePricePerStudent = billing.perStudent;
+
+        pricePerStudentElements[packNumber]!.textContent =
+          `Seulement ${basePricePerStudent.toFixed(2)}€ par élève`;
+      }
+
+      // Update card styling based on recommendation
+      const cardElement = document.querySelector(`[data-pack="${packNumber}"]`) as HTMLElement;
+      if (cardElement) {
+                if (packNumber === recommendedPack) {
+          // Add highlight ring based on pack color
+          const ringColor = packNumber === '50' ? 'ring-primary' :
+                           packNumber === '250' ? 'ring-secondary' : 'ring-accent';
+          cardElement.classList.add('ring-2', ringColor, 'ring-offset-2', 'scale-105');
+          cardElement.classList.add('shadow-lg');
+        } else {
+          // Remove highlight
+          cardElement.classList.remove('ring-2', 'ring-primary', 'ring-secondary', 'ring-accent', 'ring-offset-2', 'scale-105');
+          cardElement.classList.remove('shadow-lg');
+        }
+      }
+    });
+  }
+
+  // Event listeners
+  if (studentSlider) {
+    studentSlider.addEventListener('input', updatePrices);
+    studentSlider.addEventListener('change', updatePrices);
+  }
+
+    // Billing toggle event listeners
+  if (monthlyBtn && yearlyBtn) {
+    monthlyBtn.addEventListener('click', () => {
+      isYearly = false;
+      updateBillingUI();
+      updatePrices();
+    });
+
+    yearlyBtn.addEventListener('click', () => {
+      isYearly = true;
+      updateBillingUI();
+      updatePrices();
+    });
+  }
+
+  function updateBillingUI() {
+    if (monthlyBtn && yearlyBtn) {
+      if (isYearly) {
+        // Yearly selected
+        monthlyBtn.classList.remove('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
+        monthlyBtn.classList.add('text-muted-foreground', 'dark:text-muted-foreground');
+        yearlyBtn.classList.remove('text-muted-foreground', 'dark:text-muted-foreground');
+        yearlyBtn.classList.add('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
+      } else {
+        // Monthly selected
+        monthlyBtn.classList.remove('text-muted-foreground', 'dark:text-muted-foreground');
+        monthlyBtn.classList.add('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
+        yearlyBtn.classList.remove('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
+        yearlyBtn.classList.add('text-muted-foreground', 'dark:text-muted-foreground');
+      }
+    }
+  }
+
+    // Initialize
+  updatePrices();
+  updateBillingUI();
+</script>

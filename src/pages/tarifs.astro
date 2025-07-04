@@ -1,0 +1,16 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import InteractivePricingSection from "@components/sections/pricing/InteractivePricingSection.astro";
+import pricingInteractive from "@data/pricing-interactive.json";
+
+const pageTitle = "Tarifs | Eduroots - Plateforme de gestion scolaire open source";
+const metaDescription = "Découvrez nos tarifs transparents et interactifs. Calculez votre coût en fonction du nombre d'élèves et choisissez le plan qui vous convient le mieux.";
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle="Tarifs | Eduroots"
+>
+  <InteractivePricingSection pricing={pricingInteractive} />
+</MainLayout>

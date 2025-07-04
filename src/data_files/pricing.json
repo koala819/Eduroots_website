@@ -1,0 +1,40 @@
+{
+  "title": "Tarification Simple et Transparente",
+  "subTitle": "Optimisez votre gestion scolaire avec les plans Eduroots, conçus pour votre réussite.",
+  "badge": "Le plus populaire",
+  "thirdOption": "Besoin d'une solution sur mesure ?",
+  "btnText": "Demander un devis personnalisé",
+
+  "starterKit": {
+    "name": "École",
+    "description": "Parfait pour les petites écoles",
+    "price": "29",
+    "cents": ".00",
+    "billingFrequency": "€ / mois",
+    "features": [
+      "Gestion de 100 élèves",
+      "Messagerie intégrée",
+      "Suivi des absences",
+      "Support standard"
+    ],
+    "purchaseBtnTitle": "Choisir l'offre École",
+    "purchaseLink": "#demo"
+  },
+
+  "professionalToolbox": {
+    "name": "Établissement",
+    "description": "Idéal pour les grandes structures",
+    "price": "79",
+    "cents": ".00",
+    "billingFrequency": "€ / mois",
+    "features": [
+      "Élèves illimités",
+      "Tableaux de bord avancés",
+      "Support prioritaire",
+      "Gestion multi-sites",
+      "Rapports personnalisés"
+    ],
+    "purchaseBtnTitle": "Choisir l'offre Établissement",
+    "purchaseLink": "#demo"
+  }
+}

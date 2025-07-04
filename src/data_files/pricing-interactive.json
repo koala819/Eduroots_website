@@ -1,0 +1,69 @@
+{
+  "title": "Tarification Interactive et Transparente",
+  "subTitle": "Calculez votre tarif en fonction du nombre d'élèves. Choisissez le plan qui vous convient le mieux.",
+  "sliderLabel": "Nombre d'élèves",
+  "billingToggle": {
+    "monthly": "Paiement mensuel",
+    "yearly": "Paiement annuel",
+    "yearlySavings": "Économisez 20%"
+  },
+  "packs": {
+    "pack50": {
+      "name": "Pack 50",
+      "description": "Parfait pour les petites écoles",
+      "monthlyPrice": 84,
+      "yearlyPrice": 504,
+      "monthlyPricePerStudent": 1.68,
+      "yearlyPricePerStudent": 0.84,
+      "monthlyExtraStudentPrice": 1.68,
+      "yearlyExtraStudentPrice": 0.42,
+      "maxStudents": 50,
+      "features": [
+        "Gestion de 50 élèves",
+        "Messagerie intégrée",
+        "Suivi des absences",
+        "Support standard",
+        "Tableaux de bord basiques"
+      ]
+    },
+    "pack250": {
+      "name": "Pack 250",
+      "description": "Idéal pour les écoles moyennes",
+      "monthlyPrice": 240,
+      "yearlyPrice": 1440,
+      "monthlyPricePerStudent": 0.96,
+      "yearlyPricePerStudent": 0.48,
+      "monthlyExtraStudentPrice": 0.96,
+      "yearlyExtraStudentPrice": 0.24,
+      "maxStudents": 250,
+      "features": [
+        "Gestion de 250 élèves",
+        "Toutes les fonctionnalités du Pack 50",
+        "Tableaux de bord avancés",
+        "Rapports détaillés",
+        "Support prioritaire"
+      ]
+    },
+    "pack500": {
+      "name": "Pack 500",
+      "description": "Pour les grandes structures",
+      "monthlyPrice": 360,
+      "yearlyPrice": 2160,
+      "monthlyPricePerStudent": 0.72,
+      "yearlyPricePerStudent": 0.36,
+      "monthlyExtraStudentPrice": 0.72,
+      "yearlyExtraStudentPrice": 0.18,
+      "maxStudents": 500,
+      "features": [
+        "Gestion de 500 élèves",
+        "Toutes les fonctionnalités du Pack 250",
+        "Gestion multi-sites",
+        "API personnalisée",
+        "Support dédié"
+      ]
+    }
+  },
+  "ctaText": "Commencer maintenant",
+  "ctaLink": "#demo",
+  "note": "1 licence = 1 élève, étudiant ou apprenant"
+}

@@ -1,0 +1,33 @@
+---
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+const {
+  label = "Search",
+  title = Astro.currentLocale === "fr" ? "S'abonner" : "Subscribe",
+  id = "footer-input",
+} = Astro.props;
+
+interface Props {
+  label?: string;
+  title?: string;
+  id?: string;
+}
+
+const placeholder = Astro.currentLocale === "fr" ? "Entrez votre email" : "Enter your email";
+---
+
+<div
+  class="mt-4 flex flex-col items-center gap-2 rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800 sm:flex-row sm:gap-3"
+>
+  <div class="w-full">
+    <label for={id} class="sr-only">{label}</label>
+    <input
+      type="text"
+      id={id}
+      name="footer-input"
+      class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 focus:border-primary focus:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-700 dark:text-gray-300 dark:placeholder:text-neutral-300 caret-primary"
+      placeholder={placeholder}
+    />
+  </div>
+  <PrimaryCTA title={title} url="#" noArrow={true} />
+</div>
