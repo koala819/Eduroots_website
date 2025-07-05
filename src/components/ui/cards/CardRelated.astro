@@ -36,17 +36,19 @@ const cardImage = typeof blogEntry.data.cardImage === 'string'
   data-astro-prefetch
 >
   <div>
-    <Image
-      class="aspect-video rounded-xl w-full h-auto"
-      src={cardImage}
-      alt={blogEntry.data.cardImageAlt}
-      width={400}
-      height={225}
-      draggable="false"
-    />
+    <div class="relative overflow-hidden rounded-xl">
+      <Image
+        class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-105"
+        src={cardImage}
+        alt={blogEntry.data.cardImageAlt}
+        width={400}
+        height={225}
+        draggable="false"
+      />
+    </div>
     <!-- The title of the blog post -->
     <h3
-      class="mt-2 text-balance text-lg font-medium text-neutral-800 group-hover:text-primary dark:text-neutral-300 dark:group-hover:text-neutral-50"
+      class="mt-3 text-balance text-lg font-medium text-neutral-800 group-hover:text-primary dark:text-neutral-300 dark:group-hover:text-neutral-50"
     >
       {blogEntry.data.title}
     </h3>

@@ -3,7 +3,6 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
-import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
 import { Image } from "astro:assets";
 
 import { capitalize, formatDate } from "@utils/utils";
@@ -125,32 +124,7 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
         <Content />
       </div>
-      <div
-        class="mx-auto grid max-w-(--breakpoint-lg) gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
-      >
-        {/* Blog post tags */}
-        <div
-          class="flex flex-wrap gap-x-2 gap-y-1 sm:flex-nowrap sm:items-center sm:gap-y-0"
-        >
-          {
-            post.data.tags?.map((tag: string) => (
-              <span class="inline-flex items-center gap-x-1.5 rounded-lg bg-neutral-400/30 px-3 py-1.5 text-xs font-medium text-neutral-700 outline-hidden focus:outline-hidden focus-visible:ring-3 focus-visible:outline-hidden dark:bg-neutral-700/60 dark:text-neutral-300">
-                {capitalize(tag)}
-              </span>
-            ))
-          }
-        </div>
-        {/* Post actions */}
-        <div class="flex items-center justify-end gap-x-1.5">
-          <!-- Actions removed for simplicity -->
-        </div>
-      </div>
     </div>
-    <PostFeedback
-      title="Was this post helpful?"
-      firstChoice="Yes"
-      secondChoice="No"
-    />
   </section>
 
   {/* Related articles section */}
@@ -159,7 +133,7 @@ const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
       <h2
         class="text-2xl font-bold text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
       >
-        Related articles
+        Articles similaires
       </h2>
     </div>
 
