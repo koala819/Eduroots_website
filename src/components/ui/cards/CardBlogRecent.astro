@@ -1,15 +1,31 @@
 ---
 // Import all required components and utilities
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+// Import images
+import smartphoneMessagerie from "@images/blog/Smartphone_Messagerie.webp";
+import smartphoneEtoiles from "@images/blog/Smartphone_Etoiles.webp";
+import laptopStudents from "@images/blog/Laptop_Students_Often_Missed.webp";
 
 const { blogEntry } = Astro.props;
 
 interface Props {
   blogEntry: CollectionEntry<"blog">;
 }
+
+// Map image paths to imported images
+const imageMap = {
+  "@/images/blog/Smartphone_Messagerie.webp": smartphoneMessagerie,
+  "@/images/blog/Smartphone_Etoiles.webp": smartphoneEtoiles,
+  "@/images/blog/Laptop_Students_Often_Missed.webp": laptopStudents,
+};
+
+const cardImage = typeof blogEntry.data.cardImage === 'string'
+  ? imageMap[blogEntry.data.cardImage as keyof typeof imageMap] || blogEntry.data.cardImage
+  : blogEntry.data.cardImage;
 ---
 
 <!-- Root container, which is divided into 2 grid column layout for larger screens -->
@@ -19,11 +35,12 @@ interface Props {
     <div class="relative rounded-lg pt-[50%] sm:pt-[100%]">
       <Image
         class="absolute start-0 top-0 size-full rounded-xl object-cover"
-        src={blogEntry.data.cardImage}
+        src={cardImage}
         alt={blogEntry.data.cardImageAlt}
-        draggable={"false"}
-        loading={"eager"}
-        format={"avif"}
+        width={800}
+        height={600}
+        draggable="false"
+        loading="eager"
       />
     </div>
   </div>

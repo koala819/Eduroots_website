@@ -1,22 +1,30 @@
 ---
-// Import necessary components
-import { Image } from "astro:assets";
-
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import xavierAvatar from "@images/avatars/xavier.webp";
 
 const { blogEntry } = Astro.props;
 
 interface Props {
   blogEntry: CollectionEntry<"blog">;
 }
+
+const avatarMap = {
+  "@/images/avatars/xavier.webp": xavierAvatar,
+};
+
+const authorImage = typeof blogEntry.data.authorImage === 'string'
+  ? avatarMap[blogEntry.data.authorImage as keyof typeof avatarMap] || blogEntry.data.authorImage
+  : blogEntry.data.authorImage;
 ---
 
 <div class="shrink-0">
   <Image
     class="size-[46px] rounded-full border-2 border-neutral-50"
-    src={blogEntry.data.authorImage}
+    src={authorImage}
     alt={blogEntry.data.authorImageAlt}
-    draggable={"false"}
-    format={"avif"}
+    width={46}
+    height={46}
+    draggable="false"
   />
 </div>

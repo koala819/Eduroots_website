@@ -3,7 +3,6 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
-import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
@@ -28,14 +27,14 @@ const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 // Define variables for page content
 const title: string = "Blog EduRoots";
 const subTitle: string =
-  "Découvrez nos derniers articles sur la gestion scolaire, les bonnes pratiques éducatives et les actualités d'EduRoots. De la gestion administrative aux outils de communication, notre blog est votre ressource pour tout ce qui concerne l'éducation.";
+  "Découvrez mes derniers articles sur la gestion scolaire, les bonnes pratiques éducatives et les actualités d'EduRoots. De la gestion administrative aux outils de communication, mon blog est votre ressource pour tout ce qui concerne l'éducation.";
 const secondTitle: string = "Insights";
 const secondSubTitle: string =
-  "Restez informé des dernières tendances et développements dans le secteur éducatif avec les insights de l'équipe d'experts d'EduRoots.";
+  "Restez informé des dernières tendances et développements dans le secteur éducatif avec mes insights d'expert en gestion scolaire.";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 const metaDescription =
-  "Découvrez nos derniers articles sur la gestion scolaire, les bonnes pratiques éducatives et les actualités d'EduRoots.";
+  "Découvrez mes derniers articles sur la gestion scolaire, les bonnes pratiques éducatives et les actualités d'EduRoots.";
 const ogTitle = "Blog Gestion Scolaire | EduRoots";
 ---
 
@@ -50,7 +49,7 @@ const ogTitle = "Blog Gestion Scolaire | EduRoots";
     url: "https://eduroots.org/blog",
     name: "Blog | Eduroots",
     description:
-      "Découvrez nos derniers articles sur la gestion scolaire, les bonnes pratiques éducatives et les actualités d'Eduroots.",
+      "Découvrez mes derniers articles sur la gestion scolaire, les bonnes pratiques éducatives et les actualités d'Eduroots.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://eduroots.org",
@@ -92,27 +91,5 @@ const ogTitle = "Blog Gestion Scolaire | EduRoots";
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     <CardBlogRecent blogEntry={mostRecentPost} />
-  </section>
-  {/* Insights section */}
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <h2
-        class="text-2xl font-bold text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
-      >
-        {secondTitle}
-      </h2>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {secondSubTitle}
-      </p>
-    </div>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} />
-        ))
-      }
-    </div>
   </section>
 </MainLayout>
