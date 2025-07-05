@@ -1,0 +1,60 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import faqs from "@data/faqs.json";
+
+const pageTitle = "FAQ | Eduroots - Questions fréquemment posées";
+const metaDescription = "Trouvez rapidement des réponses à vos questions sur Eduroots, notre plateforme de gestion pour les mosquées.";
+---
+
+<MainLayout title={pageTitle} customDescription={metaDescription}>
+  <!-- Hero section pour la page FAQ -->
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Questions<br />fréquemment posées
+        </h1>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8">
+          Tout ce que vous devez savoir sur Eduroots et son utilisation dans votre mosquée
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section FAQ -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <FAQ title="" faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- Section contact -->
+  <section class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+          Vous ne trouvez pas votre réponse ?
+        </h2>
+        <p class="text-xl mb-8">
+          Contactez-moi directement pour toute question spécifique à votre mosquée
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div>
+            <p class="text-lg mb-2">
+              <strong>Téléphone :</strong> 06 76 26 30 24
+            </p>
+            <p class="text-sm opacity-90">WhatsApp, Telegram</p>
+          </div>
+          <div>
+            <p class="text-lg mb-2">
+              <strong>Email :</strong> x.genolhac@gmail.com
+            </p>
+            <p class="text-sm opacity-90">Réponse rapide garantie</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

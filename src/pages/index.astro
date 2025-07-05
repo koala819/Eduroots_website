@@ -7,7 +7,6 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import IconBlock from "@components/ui/blocks/IconBlock.astro";
 // Import Eduroots images
@@ -20,7 +19,6 @@ import avatar4 from "@images/avatars/avatar4.jpg";
 import dashboard from "@images/dashboard-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
-import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import { partnersData } from "@/data_files/constants";
 
@@ -297,8 +295,6 @@ const avatarSrcs: Array<any> = [
       </div>
     </div>
   </section>
-
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
 
   <!-- Section : Contact et CTA final -->
   <section id="contact" class="py-16 bg-primary text-white">

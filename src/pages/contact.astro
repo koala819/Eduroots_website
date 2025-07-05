@@ -2,12 +2,11 @@
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
-import { SITE } from "@data/constants";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle: string = "Contact | Eduroots";
 const metaDescription =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const ogTitle = "Contact Us | ScrewFast";
+  "Vous avez des questions sur Eduroots ? Contactez-moi pour discuter de la mise en place de notre solution dans votre mosquée.";
+const ogTitle = "Contact | Eduroots";
 ---
 
 <MainLayout
@@ -17,19 +16,18 @@ const ogTitle = "Contact Us | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    url: "https://screwfast.uk/contact",
-    name: "Contact Us | ScrewFast",
+    "@id": "https://eduroots.org/contact",
+    url: "https://eduroots.org/contact",
+    name: "Contact | Eduroots",
     description:
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
+      "Vous avez des questions sur Eduroots ? Contactez-moi pour discuter de la mise en place de notre solution dans votre mosquée.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://eduroots.org",
+      name: "Eduroots",
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Eduroots simplifie la gestion scolaire des mosquées avec des outils pensés pour les enseignants, parents et administrateurs.",
     },
-    inLanguage: "en-US",
   }}
 >
   <ContactSection />
