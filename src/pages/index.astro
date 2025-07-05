@@ -9,6 +9,7 @@ import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import IconBlock from "@components/ui/blocks/IconBlock.astro";
 // Import Eduroots images
 import heroImage from "@images/eduroots-tableau-bord-famille-mobile.webp";
 import featureImage from "@images/eduroots-og-image.jpg";
@@ -23,7 +24,7 @@ import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import { partnersData } from "@/data_files/constants";
 
-const pageTitle = "Accueil | Eduroots - Plateforme de gestion pour les mosquées";
+const pageTitle = "Accueil | Eduroots - Simplifiez la gestion de votre mosquée";
 
 const avatarSrcs: Array<any> = [
   avatar1 as any,
@@ -41,10 +42,10 @@ const avatarSrcs: Array<any> = [
   />
 
   <HeroSection
-    title=`Équipez vos projets avec <span class="text-primary dark:text-primary-light">Eduroots</span>`
-    subTitle="Plateforme de gestion pour les mosquées pensée pour les écoles associatives, cours du soir et mosquées."
+    title=`Simplifiez la gestion de votre <span class="text-primary dark:text-primary-light">mosquée</span>`
+    subTitle="Une application web conçue avec et pour les mosquées, pour suivre les élèves, fluidifier l'organisation et impliquer les familles."
     primaryBtn="Demander une démo"
-    primaryBtnURL="#demo"
+    primaryBtnURL="#contact"
     secondaryBtn="Découvrir les fonctionnalités"
     secondaryBtnURL="#features"
     withReview={true}
@@ -57,10 +58,71 @@ const avatarSrcs: Array<any> = [
   />
 
   <ClientsSection
-    title="Adopté par les écoles innovantes"
-    subTitle="Rejoignez les établissements qui ont choisi l'efficacité avec Eduroots."
+    title="Adopté par les mosquées innovantes"
+    subTitle="Rejoignez les mosquées qui ont choisi l'efficacité avec Eduroots."
     partners={partnersData}
   />
+
+  <!-- Nouvelle section : Notre approche -->
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          La gestion des cours de votre mosquée mérite mieux que des fichiers Excel
+        </h2>
+        <div class="prose prose-lg max-w-none dark:prose-invert mb-12">
+          <p class="text-lg mb-6">
+            Aujourd'hui, les mosquées jonglent avec beaucoup d'outils peu adaptés : formulaires papiers, fichier Excel partagé, des messages WhatsApp...
+          </p>
+          <p class="text-lg mb-8">
+            Ces méthodes, bien que familières donnent l'impression d'une certaine facilité. Pourtant elles génèrent de la confusion avec une perte de temps et un manque de visibilité pour les enseignants bénévoles, les parents et le bureau administratif.
+          </p>
+          <div class="bg-primary/10 border-l-4 border-primary p-6 rounded-r-lg">
+            <p class="text-lg font-medium">
+              Eduroots est né de ce constat et a une ambition simple et claire : vouloir simplifier la gestion quotidienne des cours et faciliter le travail pour chaque partie.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-8 text-center">
+          Des freins identifiés dans les mosquées
+        </h3>
+        <p class="text-lg text-center mb-12 text-neutral-600 dark:text-neutral-400">
+          En intervenant directement dans des mosquées comme la vôtre, j'identifie les points de friction pour adapter Eduroots :
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <IconBlock heading="Perte de temps" content="Gestion des absences, des retards ou du comportement">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </IconBlock>
+          <IconBlock heading="Manque de visibilité" content="Absence d'une vision claire sur la progression des élèves">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </IconBlock>
+          <IconBlock heading="Données dispersées" content="Google Sheets, feuilles, WhatsApp, ...">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+            </svg>
+          </IconBlock>
+          <IconBlock heading="Communication complexe" content="Communication parent-équipe pédagogique compliquée">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </IconBlock>
+          <IconBlock heading="Outils inadaptés" content="Outils numériques peu adaptés à votre réalité de terrain">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </IconBlock>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <FeaturesGeneral
     id="features"
@@ -103,42 +165,187 @@ const avatarSrcs: Array<any> = [
     ]}
   />
 
+  <!-- Section : Accompagnement humain -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Un accompagnement de A à Z, sur mesure
+        </h2>
+        <div class="prose prose-lg max-w-none dark:prose-invert mb-8">
+          <p class="text-lg">
+            Je ne vous livre pas juste un outil. Je vous accompagne dans sa mise en place, son adaptation et son appropriation.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">1</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Échange personnalisé</h3>
+            <p>Vos pratiques réelles, pas de jargon, juste vos besoins concrets</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">2</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Démonstration adaptée</h3>
+            <p>Démonstration personnalisée d'Eduroots avec vos cas d'usage</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">3</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Mise en place</h3>
+            <p>Mise en place de l'outil dans votre structure</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">4</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Formation et suivi</h3>
+            <p>Suivi humain et évolutions selon vos retours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <TestimonialsSection
-    title="Simplifiez votre gestion scolaire"
-    subTitle="Avec Eduroots, démarrez rapidement avec une configuration simple. Découvrez la gestion scolaire réinventée."
+    title="Cas concret : Mosquée Al'Ihsane"
+    subTitle="Découvrez comment Eduroots a transformé la gestion de cette mosquée de Colomiers."
     testimonials={[
       {
         content:
-          "Eduroots a révolutionné notre façon de gérer l'école. L'installation est immédiate et les fonctionnalités sont parfaitement adaptées aux besoins d'une école associative. Un vrai gain de temps !",
-        author: "Fatima Benali",
-        role: "Directrice | École Al-Firdaws",
+          "La mosquée de Colomiers avait besoin de suivre plus de 400 élèves avec une trentaine d'enseignants bénévoles et un bureau administratif peu technophile. Avec Eduroots, nous avons automatisé la gestion des groupes, des absences et du suivi des élèves. Résultat : gain de temps sur la gestion hebdomadaire, meilleure implication des familles, et zéro dépendance à des outils propriétaires ou payants.",
+        author: "Bureau administratif",
+        role: "Mosquée Al'Ihsane | Colomiers",
         avatarSrc: avatar2 as any,
       },
     ]}
     statistics={[
       {
-        count: "200+",
+        count: "400+",
         description:
-          "établissements utilisent Eduroots — des écoles associatives aux grandes institutions",
+          "élèves suivis avec une trentaine d'enseignants bénévoles",
       },
       {
-        count: "50%",
+        count: "100%",
         description:
-          "de temps économisé sur les tâches administratives avec Eduroots",
+          "automatisation de la gestion des groupes et absences",
       },
       {
-        count: "25%",
+        count: "0",
         description:
-          "d'amélioration de la communication parents-école rapportée par nos utilisateurs",
+          "dépendance aux outils propriétaires ou payants",
       },
       {
-        count: "99%",
-        description: "de satisfaction utilisateur grâce à notre interface intuitive",
+        count: "Gain",
+        description: "de temps significatif sur la gestion hebdomadaire",
       },
     ]}
   />
 
+  <!-- Section : Qui suis-je ? -->
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Qui suis-je ?
+        </h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-shrink-0">
+            <!-- Espace pour photo future -->
+            <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+              <span class="text-4xl font-bold text-primary">XG</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold mb-4">Xavier GENOLHAC</h3>
+            <p class="text-lg mb-6">
+              Je suis un développeur musulman engagé. Je ne suis ni une agence, ni une plateforme impersonnelle. Je suis un développeur indépendant spécialisé dans les solutions pour les mosquées.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-semibold mb-2">Expérience</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Plus de 16 ans d'expérience sur le terrain (FREE et freelance)
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Technologies</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Outils modernes (Next.js, Astro, Sanity, TypeScript)
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Engagement</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Sensibilité pour le monde associatif et la communauté musulmane
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Approche</h4>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Outils ouverts, transparents et durables
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+
+  <!-- Section : Contact et CTA final -->
+  <section id="contact" class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+          Et maintenant ?
+        </h2>
+        <h3 class="text-2xl font-semibold mb-8">
+          Découvrir, tester, s'équiper
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white/10 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-4">1. Préparation</h4>
+            <p>Je vous fournis un document Excel modèle que vous me retournez pour réaliser une démo</p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-4">2. Démonstration</h4>
+            <p>Je me déplace sur Toulouse et dans un rayon de 20 km pour une démo de 2h avec votre bureau administratif</p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-4">3. Mise en place</h4>
+            <p>En une semaine, Eduroots est configuré pour votre mosquée avec vos données</p>
+          </div>
+        </div>
+
+        <div class="bg-white/10 p-8 rounded-lg">
+          <h4 class="text-2xl font-semibold mb-6">Contactez-moi</h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-lg mb-2">
+                <strong>Téléphone :</strong> 06 76 26 30 24
+              </p>
+              <p class="text-sm opacity-90">WhatsApp, Telegram</p>
+            </div>
+            <div>
+              <p class="text-lg mb-2">
+                <strong>Email :</strong> x.genolhac@gmail.com
+              </p>
+              <p class="text-sm opacity-90">Réponse rapide garantie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <HeroSectionAlt
     title="Construisons l'éducation de demain"
