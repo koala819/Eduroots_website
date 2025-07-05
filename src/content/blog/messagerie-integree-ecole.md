@@ -25,6 +25,8 @@ tags:
 
 Dans les établissements associatifs, la communication peut vite devenir un casse-tête. Entre les appels tardifs, les mails perdus et les groupes WhatsApp, l'information circule mal. Eduroots propose une solution intégrée, pensée pour simplifier le quotidien.
 
+![Interface de messagerie Eduroots sur mobile](/src/images/blog/Smartphone_Messagerie.webp)
+
 La messagerie intégrée est la clé d'une communication simple et efficace !
 
 La vie d'une mosquée, d'une association ou d'une école privée se joue aussi dans les échanges quotidiens. Quand les familles, les professeurs et l'administration peinent à se joindre ou à partager l'information, les malentendus s'accumulent. C'est là qu'Eduroots se distingue.
