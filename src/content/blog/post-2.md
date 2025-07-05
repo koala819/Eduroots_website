@@ -1,5 +1,5 @@
 ---
-title: "Améliorer la Sécurité et l'Artisanat avec les Services de Construction de ScrewFast"
+title: "Améliorer la Gestion Scolaire avec les Services d'Eduroots"
 description: "Services de construction de qualité pour des résultats durables"
 author: "Brad"
 authorImage: "@/images/blog/brad.avif"

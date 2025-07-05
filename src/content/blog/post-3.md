@@ -1,5 +1,5 @@
 ---
-title: "Simplifiez l'Approvisionnement et Restez dans les Limites du Budget avec ScrewFast"
+title: "Simplifiez la Gestion Administrative et Restez dans les Limites du Budget avec Eduroots"
 description: "Outils abordables et durables pour des projets de construction efficaces"
 author: "Olga Zabegina"
 role: "Directrice Marketing Stratégique"
