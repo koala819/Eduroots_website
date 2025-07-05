@@ -1,7 +1,6 @@
 // https://docs.astro.build/en/guides/content-collections/#defining-collections
 
 import { z, defineCollection } from 'astro:content';
-import { docsSchema } from '@astrojs/starlight/schema';
 
 const blogCollection = defineCollection({
   schema: ({ image }) => z.object ({
@@ -10,10 +9,10 @@ const blogCollection = defineCollection({
     contents: z.array(z.string()),
     author: z.string(),
     role: z.string().optional(),
-    authorImage: image(),
+    authorImage: z.union([image(), z.string().url()]),
     authorImageAlt: z.string(),
     pubDate: z.date(),
-    cardImage: image(),
+    cardImage: z.union([image(), z.string().url()]),
     cardImageAlt: z.string(),
     readTime: z.number(),
     tags: z.array(z.string()).optional(),
@@ -85,7 +84,6 @@ const productsCollection = defineCollection({
 });
 
 export const collections = {
-  docs: defineCollection({ schema: docsSchema() }),
   'blog': blogCollection,
   'insights': insightsCollection,
   'products': productsCollection,

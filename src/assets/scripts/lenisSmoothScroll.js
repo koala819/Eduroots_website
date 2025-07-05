@@ -1,3 +1,5 @@
+import "@styles/lenis.css";
+
 import Lenis from "lenis";
 
 // Script to handle Lenis library settings for smooth scrolling
@@ -5,5 +7,3 @@ import Lenis from "lenis";
 const lenis = new Lenis({
     autoRaf: true,
 });
-
-export default lenis;
