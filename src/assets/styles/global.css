@@ -9,7 +9,7 @@
   /* Couleur principale et ses variations - Adaptées pour EduRoots */
   --color-primary: hsl(212.7, 25%, 35%);
   --color-primary-light: hsl(212.7, 25%, 45%);
-  --color-primary-dark: hsl(212.7, 25%, 25%);
+  --color-primary-dark: hsl(210, 100%, 70%);
   --color-primary-accent: hsl(212.7, 35%, 40%);
 
   /* La couleur de fond principale de l'application */
@@ -22,18 +22,20 @@
   /* Couleurs secondaires - teintes complémentaires */
   --color-secondary: hsl(85, 20%, 35%);
   --color-secondary-light: hsl(85, 20%, 45%);
-  --color-secondary-dark: hsl(85, 20%, 25%);
+  --color-secondary-dark: hsl(85, 20%, 70%);
   --color-secondary-foreground: hsl(210, 20%, 98%);
 
   /* Couleurs d'accent */
   --color-accent: hsl(180, 30%, 45%);
   --color-accent-light: hsl(180, 35%, 55%);
-  --color-accent-dark: hsl(180, 25%, 35%);
+  --color-accent-dark: hsl(180, 30%, 70%);
   --color-accent-foreground: hsl(210, 20%, 98%);
 
   /* Couleurs neutres */
   --color-muted: hsl(212.7, 10%, 85%);
+  --color-muted-dark: hsl(212.7, 10%, 25%);
   --color-muted-foreground: hsl(212.7, 10%, 40%);
+  --color-muted-foreground-dark: hsl(212.7, 10%, 75%);
   --color-border: hsl(212.7, 15%, 85%);
   --color-input: hsl(212.7, 15%, 92%);
   --color-ring: hsl(212.7, 25%, 35%);

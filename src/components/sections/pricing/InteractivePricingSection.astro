@@ -25,19 +25,19 @@ const { pricing, id } = Astro.props;
   <div class="mx-auto max-w-4xl">
         <!-- Billing Toggle -->
     <div class="mb-8 flex items-center justify-center">
-      <div class="bg-muted rounded-lg p-1 flex items-center dark:bg-muted/50">
+      <div class="bg-muted rounded-lg p-1 flex items-center dark:bg-neutral-700">
         <button
           id="monthly-btn"
-          class="px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 bg-white shadow-sm text-primary border border-primary/20 dark:bg-background dark:text-primary dark:border-primary/30"
+          class="px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 bg-white shadow-sm text-primary border border-primary/20 dark:bg-neutral-900 dark:text-primary-dark dark:border-primary-dark"
         >
           {pricing.billingToggle.monthly}
         </button>
         <button
           id="yearly-btn"
-          class="px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 text-muted-foreground hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+          class="px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-white border border-transparent"
         >
           {pricing.billingToggle.yearly}
-          <span class="ml-2 inline-flex items-center rounded-full bg-success/20 px-2 py-0.5 text-xs font-medium text-success dark:bg-success/30">
+          <span class="ml-2 inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-200">
             {pricing.billingToggle.yearlySavings}
           </span>
         </button>
@@ -50,7 +50,7 @@ const { pricing, id } = Astro.props;
         <label for="student-slider" class="text-lg font-medium text-neutral-800 dark:text-neutral-200">
           {pricing.sliderLabel}
         </label>
-        <span id="student-count" class="text-2xl font-bold text-primary">
+        <span id="student-count" class="text-2xl font-bold text-primary dark:text-primary-dark">
           50
         </span>
       </div>
@@ -67,9 +67,9 @@ const { pricing, id } = Astro.props;
           class="absolute inset-0 w-full h-2 opacity-0 cursor-pointer z-10"
         />
         <!-- Visible thumb overlay -->
-        <div id="slider-thumb" class="absolute top-1/2 w-5 h-5 bg-primary rounded-full border-2 border-white shadow-lg transform -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20" style="left: 5%"></div>
-        <div class="h-2 bg-muted rounded-lg relative">
-          <div id="progress-fill" class="h-2 bg-gradient-to-r from-primary to-primary-light rounded-lg transition-all duration-300" style="width: 5%"></div>
+        <div id="slider-thumb" class="absolute top-1/2 w-5 h-5 bg-primary rounded-full border-2 border-white shadow-lg transform -translate-y-1/2 -translate-x-1/2 pointer-events-none z-20 dark:bg-primary-dark" style="left: 5%"></div>
+        <div class="h-2 bg-muted rounded-lg relative dark:bg-muted-dark">
+          <div id="progress-fill" class="h-2 bg-gradient-to-r from-primary to-primary-light rounded-lg transition-all duration-300 dark:from-primary-dark dark:to-primary-dark" style="width: 5%"></div>
         </div>
       </div>
 
@@ -79,24 +79,24 @@ const { pricing, id } = Astro.props;
     <!-- Pricing Cards -->
     <div class="grid gap-6 md:grid-cols-3">
       <!-- Pack 50 -->
-      <div class="relative rounded-xl border-2 border-primary/20 bg-primary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-primary/20 dark:border-primary/40 dark:shadow-lg" data-pack="50">
+      <div class="relative rounded-xl border-2 border-primary/20 bg-primary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-primary-dark/20 dark:border-primary-dark/40 dark:shadow-lg" data-pack="50">
         <div class="mb-4">
-          <h3 class="text-xl font-bold text-primary">
+          <h3 class="text-xl font-bold text-primary dark:text-primary-dark">
             {pricing.packs.pack50.name}
           </h3>
-          <p class="text-sm text-muted-foreground">
+          <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
             {pricing.packs.pack50.description}
           </p>
         </div>
 
         <div class="mb-4">
           <div class="flex items-baseline">
-            <span id="price-50" class="text-3xl font-bold text-primary">84.00</span>
-            <span class="ml-1 text-lg text-primary">€</span>
-            <span id="period-50" class="ml-2 text-sm text-muted-foreground">/mois</span>
+            <span id="price-50" class="text-3xl font-bold text-primary dark:text-primary-dark">84.00</span>
+            <span class="ml-1 text-lg text-primary dark:text-primary-dark">€</span>
+            <span id="period-50" class="ml-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
           </div>
           <div class="mt-2">
-            <span id="price-per-student-50" class="text-sm text-muted-foreground">
+            <span id="price-per-student-50" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
               Seulement 1.68€ par élève
             </span>
           </div>
@@ -104,8 +104,8 @@ const { pricing, id } = Astro.props;
 
         <ul class="mb-6 space-y-2">
           {pricing.packs.pack50.features.map((feature: string) => (
-            <li class="flex items-center gap-2 text-sm text-muted-foreground">
-              <Icon name="checkCircle" class="h-4 w-4 text-primary" />
+              <li class="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">
+              <Icon name="checkCircle" class="h-4 w-4 text-primary dark:text-primary-dark" />
               <span>{feature}</span>
             </li>
           ))}
@@ -117,24 +117,24 @@ const { pricing, id } = Astro.props;
       </div>
 
       <!-- Pack 250 -->
-      <div class="relative rounded-xl border-2 border-secondary/20 bg-secondary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-secondary/20 dark:border-secondary/40 dark:shadow-lg" data-pack="250">
+      <div class="relative rounded-xl border-2 border-secondary/20 bg-secondary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-secondary-dark/20 dark:border-secondary-dark/40 dark:shadow-lg" data-pack="250">
         <div class="mb-4">
-          <h3 class="text-xl font-bold text-secondary">
+          <h3 class="text-xl font-bold text-secondary dark:text-secondary-dark">
             {pricing.packs.pack250.name}
           </h3>
-          <p class="text-sm text-muted-foreground">
+          <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
             {pricing.packs.pack250.description}
           </p>
         </div>
 
         <div class="mb-4">
           <div class="flex items-baseline">
-            <span id="price-250" class="text-3xl font-bold text-secondary">240.00</span>
-            <span class="ml-1 text-lg text-secondary">€</span>
-            <span id="period-250" class="ml-2 text-sm text-muted-foreground">/mois</span>
+            <span id="price-250" class="text-3xl font-bold text-secondary dark:text-secondary-dark">240.00</span>
+            <span class="ml-1 text-lg text-secondary dark:text-secondary-dark">€</span>
+            <span id="period-250" class="ml-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
           </div>
           <div class="mt-2">
-            <span id="price-per-student-250" class="text-sm text-muted-foreground">
+            <span id="price-per-student-250" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
               Seulement 0.96€ par élève
             </span>
           </div>
@@ -142,8 +142,8 @@ const { pricing, id } = Astro.props;
 
         <ul class="mb-6 space-y-2">
           {pricing.packs.pack250.features.map((feature: string) => (
-            <li class="flex items-center gap-2 text-sm text-muted-foreground">
-              <Icon name="checkCircle" class="h-4 w-4 text-secondary" />
+            <li class="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">
+              <Icon name="checkCircle" class="h-4 w-4 text-secondary dark:text-secondary-dark" />
               <span>{feature}</span>
             </li>
           ))}
@@ -155,12 +155,12 @@ const { pricing, id } = Astro.props;
       </div>
 
       <!-- Pack 500 -->
-      <div class="relative rounded-xl border-2 border-accent/20 bg-accent/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-accent/20 dark:border-accent/40 dark:shadow-lg" data-pack="500">
+      <div class="relative rounded-xl border-2 border-accent/20 bg-accent/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-accent-dark/20 dark:border-accent-dark/40 dark:shadow-lg" data-pack="500">
         <div class="mb-4">
-          <h3 class="text-xl font-bold text-accent">
+          <h3 class="text-xl font-bold text-accent dark:text-accent-dark">
             {pricing.packs.pack500.name}
           </h3>
-          <p class="text-sm text-muted-foreground">
+          <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
             {pricing.packs.pack500.description}
           </p>
         </div>
@@ -169,10 +169,10 @@ const { pricing, id } = Astro.props;
           <div class="flex items-baseline">
             <span id="price-500" class="text-3xl font-bold text-accent">360.00</span>
             <span class="ml-1 text-lg text-accent">€</span>
-            <span id="period-500" class="ml-2 text-sm text-muted-foreground">/mois</span>
+            <span id="period-500" class="ml-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
           </div>
           <div class="mt-2">
-            <span id="price-per-student-500" class="text-sm text-muted-foreground">
+            <span id="price-per-student-500" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
               Seulement 0.72€ par élève
             </span>
           </div>
@@ -180,8 +180,8 @@ const { pricing, id } = Astro.props;
 
         <ul class="mb-6 space-y-2">
           {pricing.packs.pack500.features.map((feature: string) => (
-            <li class="flex items-center gap-2 text-sm text-muted-foreground">
-              <Icon name="checkCircle" class="h-4 w-4 text-accent" />
+            <li class="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">
+              <Icon name="checkCircle" class="h-4 w-4 text-accent dark:text-accent-dark" />
               <span>{feature}</span>
             </li>
           ))}
@@ -404,16 +404,16 @@ const { pricing, id } = Astro.props;
     if (monthlyBtn && yearlyBtn) {
       if (isYearly) {
         // Yearly selected
-        monthlyBtn.classList.remove('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
-        monthlyBtn.classList.add('text-muted-foreground', 'dark:text-muted-foreground');
-        yearlyBtn.classList.remove('text-muted-foreground', 'dark:text-muted-foreground');
-        yearlyBtn.classList.add('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
+        monthlyBtn.classList.remove('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-neutral-900', 'dark:text-primary-dark', 'dark:border-primary-dark');
+        monthlyBtn.classList.add('text-neutral-600', 'dark:text-neutral-300', 'border-transparent');
+        yearlyBtn.classList.remove('text-neutral-600', 'dark:text-neutral-300', 'border-transparent');
+        yearlyBtn.classList.add('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-neutral-900', 'dark:text-primary-dark', 'dark:border-primary-dark');
       } else {
         // Monthly selected
-        monthlyBtn.classList.remove('text-muted-foreground', 'dark:text-muted-foreground');
-        monthlyBtn.classList.add('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
-        yearlyBtn.classList.remove('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-background', 'dark:text-primary', 'dark:border-primary/30');
-        yearlyBtn.classList.add('text-muted-foreground', 'dark:text-muted-foreground');
+        monthlyBtn.classList.remove('text-neutral-600', 'dark:text-neutral-300', 'border-transparent');
+        monthlyBtn.classList.add('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-neutral-900', 'dark:text-primary-dark', 'dark:border-primary-dark');
+        yearlyBtn.classList.remove('bg-white', 'shadow-sm', 'text-primary', 'border-primary/20', 'dark:bg-neutral-900', 'dark:text-primary-dark', 'dark:border-primary-dark');
+        yearlyBtn.classList.add('text-neutral-600', 'dark:text-neutral-300', 'border-transparent');
       }
     }
   }

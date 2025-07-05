@@ -1,8 +1,139 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="-0.00585938" y="-0.000488281" width="512" height="512" rx="100" fill="#262626"/>
-<rect x="20.9297" y="109.01" width="173.138" height="40.5431" rx="20.2715" transform="rotate(0.0432252 20.9297 109.01)" fill="#FACC15"/>
-<rect x="100.982" y="183.969" width="173.138" height="40.5431" rx="20.2715" transform="rotate(0.0432252 100.982 183.969)" fill="#FACC15"/>
-<rect x="181.491" y="259.354" width="173.138" height="40.5431" rx="20.2715" transform="rotate(0.0432252 181.491 259.354)" fill="#FACC15"/>
-<rect x="261.998" y="334.739" width="62.4311" height="40.5431" rx="20.2715" transform="rotate(0.0432252 261.998 334.739)" fill="#FACC15"/>
-<path d="M442.513 435.922C445.843 442.651 438.906 449.847 432.059 446.766L355.339 412.235C350.291 409.962 349.021 403.373 352.863 399.387L392.264 358.515C396.106 354.53 402.737 355.557 405.193 360.519L442.513 435.922Z" fill="#FACC15"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 200 200"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="logoFromIA.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="5.835"
+     inkscape:cx="100.08569"
+     inkscape:cy="100"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="2552"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g11" />
+  <!-- Groupe principal - pas d'espace entre les éléments -->
+  <g
+     transform="translate(20, 10)"
+     id="g11">
+    <!-- Lettre E moderne avec angles dynamiques -->
+    <path
+       d="M -14.910026,2.0565553 H 145.08997 l -10,24.9999997 H 10.089974 v 35 H 120.08997 l -10,25 H 35.089974 V 122.05656 H 160.08997 l -10,25 H 10.089974 V 2.0565553 Z"
+       fill="#42587a"
+       id="path1"
+       inkscape:label="E" />
+    <!-- Livre intégré directement au E -->
+    <!-- Page gauche avec effet de perspective -->
+    <path
+       d="M 0,145               c 40,-15 65,-10 80,-5              v 30              c -15,-5 -40,-10 -80,5              z"
+       fill="url(#leftPageGradient)"
+       stroke="#42587a"
+       stroke-width="1.5"
+       id="path2" />
+    <!-- Page droite avec effet de perspective -->
+    <path
+       d="M 160,145              c -40,-15 -65,-10 -80,-5              v 30              c 15,-5 40,-10 80,5              z"
+       fill="url(#rightPageGradient)"
+       stroke="#42587a"
+       stroke-width="1.5"
+       id="path3" />
+    <!-- Reliure centrale moderne avec ombre -->
+    <path
+       d="M 80,140              q -2,-3 0,-3              v 35              q -2,-3 0,-3"
+       fill="#42587a"
+       stroke="#42587a"
+       stroke-width="1"
+       id="path4" />
+    <!-- Lignes des pages - style épuré -->
+    <g
+       opacity="0.7"
+       id="g10"
+       style="display:inline"
+       inkscape:label="lignes"
+       transform="translate(-0.17137961,-5.8269066)">
+      <!-- Pages gauches -->
+      <path
+         d="m 15,155 55,-5"
+         stroke="#42587a"
+         stroke-width="0.75"
+         id="path5" />
+      <path
+         d="m 15,162 55,-5"
+         stroke="#42587a"
+         stroke-width="0.75"
+         id="path6" />
+      <path
+         d="m 15,169 55,-5"
+         stroke="#42587a"
+         stroke-width="0.75"
+         id="path7" />
+      <!-- Pages droites -->
+      <path
+         d="m 90,150 55,5"
+         stroke="#42587a"
+         stroke-width="0.75"
+         id="path8" />
+      <path
+         d="m 90,157 55,5"
+         stroke="#42587a"
+         stroke-width="0.75"
+         id="path9" />
+      <path
+         d="m 90,164 55,5"
+         stroke="#42587a"
+         stroke-width="0.75"
+         id="path10" />
+    </g>
+  </g>
+  <!-- Dégradé pour les pages gauche et droite -->
+  <defs
+     id="defs14">
+    <!-- Dégradé pour la page gauche -->
+    <linearGradient
+       id="leftPageGradient"
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#f9f9f9;stop-opacity:1"
+         id="stop11" />
+      <stop
+         offset="100%"
+         style="stop-color:#d1d1d1;stop-opacity:1"
+         id="stop12" />
+    </linearGradient>
+    <!-- Dégradé pour la page droite -->
+    <linearGradient
+       id="rightPageGradient"
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#f9f9f9;stop-opacity:1"
+         id="stop13" />
+      <stop
+         offset="100%"
+         style="stop-color:#d1d1d1;stop-opacity:1"
+         id="stop14" />
+    </linearGradient>
+  </defs>
 </svg>
