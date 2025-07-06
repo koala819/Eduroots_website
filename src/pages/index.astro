@@ -9,6 +9,7 @@ import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import IconBlock from "@components/ui/blocks/IconBlock.astro";
+import { Image } from "astro:assets";
 // Import Eduroots images
 import featureImage from "@/images/eduroots-tableau-bord-administratif-desktop.webp";
 import avatar1 from "@images/avatars/avatar1.jpg";
@@ -19,17 +20,11 @@ import family from "@images/eduroots-tableau-bord-famille-mobile.webp";
 import admin from "@images/eduroots-tableau-bord-administratif-tablet.webp";
 import teacher from "@images/eduroots-tableau-bord-enseignant-desktop.webp";
 import mosqueeAlIhsane from "@/images/al-ihsane.jpg";
+import xavierPhoto from "@/images/avatars/xavier.webp";
 import features from "@data/features.json";
 import { partnersData } from "@/data_files/constants";
 
 const pageTitle = "Accueil | Eduroots - Simplifiez la gestion de votre mosquée";
-
-const avatarSrcs: Array<any> = [
-  avatar1 as any,
-  avatar2 as any,
-  avatar3 as any,
-  avatar4 as any,
-];
 ---
 
 <MainLayout title={pageTitle}>
@@ -47,7 +42,6 @@ const avatarSrcs: Array<any> = [
     secondaryBtn="Découvrir les fonctionnalités"
     secondaryBtnURL="#features"
     withReview={true}
-    avatars={avatarSrcs}
     rating=`<span class="font-bold">4.9</span> / 5`
     starCount={5}
     reviews=`D'après <span class="font-bold">200+</span> utilisateurs`
@@ -243,46 +237,49 @@ const avatarSrcs: Array<any> = [
   />
 
   <!-- Section : Qui suis-je ? -->
-  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
+  <section class="py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-primary dark:text-primary-dark">
           Qui suis-je ?
         </h2>
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="flex-shrink-0">
-            <!-- Espace pour photo future -->
-            <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-              <span class="text-4xl font-bold text-primary">XG</span>
-            </div>
+            <Image
+              src={xavierPhoto as any}
+              alt="Xavier Genolhac"
+              class="w-32 h-32 rounded-full object-cover mx-auto"
+              loading="eager"
+              inferSize
+            />
           </div>
           <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-4">Xavier GENOLHAC</h3>
-            <p class="text-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4 text-primary dark:text-primary-foreground">Xavier GENOLHAC</h3>
+            <p class="text-lg mb-6 text-neutral-600 dark:text-primary-foreground/80">
               Je suis un développeur musulman engagé. Je ne suis ni une agence, ni une plateforme impersonnelle. Je suis un développeur indépendant spécialisé dans les solutions pour les mosquées.
             </p>
             <div class="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 class="font-semibold mb-2">Expérience</h4>
-                <p class="text-neutral-600 dark:text-neutral-400">
+                <h4 class="font-semibold mb-2 text-primary dark:text-primary-dark">Expérience</h4>
+                <p class="text-neutral-600 dark:text-primary-foreground/80">
                   Plus de 16 ans d'expérience sur le terrain (FREE et freelance)
                 </p>
               </div>
               <div>
-                <h4 class="font-semibold mb-2">Technologies</h4>
-                <p class="text-neutral-600 dark:text-neutral-400">
+                <h4 class="font-semibold mb-2 text-primary dark:text-primary-dark">Technologies</h4>
+                <p class="text-neutral-600 dark:text-primary-foreground/80">
                   Outils modernes (Next.js, Astro, Sanity, TypeScript)
                 </p>
               </div>
               <div>
-                <h4 class="font-semibold mb-2">Engagement</h4>
-                <p class="text-neutral-600 dark:text-neutral-400">
+                <h4 class="font-semibold mb-2 text-primary dark:text-primary-dark">Engagement</h4>
+                <p class="text-neutral-600 dark:text-primary-foreground/80">
                   Sensibilité pour le monde associatif et la communauté musulmane
                 </p>
               </div>
               <div>
-                <h4 class="font-semibold mb-2">Approche</h4>
-                <p class="text-neutral-600 dark:text-neutral-400">
+                <h4 class="font-semibold mb-2 text-primary dark:text-primary-dark">Approche</h4>
+                <p class="text-neutral-600 dark:text-primary-foreground/80">
                   Outils ouverts, transparents et durables
                 </p>
               </div>

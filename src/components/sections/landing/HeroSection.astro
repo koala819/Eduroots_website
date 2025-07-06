@@ -13,12 +13,9 @@ const {
   secondaryBtn,
   secondaryBtnURL,
   withReview,
-  avatars,
   starCount,
   rating,
   reviews,
-  src,
-  alt
 } = Astro.props;
 
 interface Props {
@@ -84,7 +81,7 @@ interface Props {
           </picture>
            { withReview ? (
   <div class="flex justify-center">
-    <ReviewComponent avatars={avatars} starCount={starCount} rating={rating} reviews={reviews} />
+    <ReviewComponent starCount={starCount} rating={rating} reviews={reviews} />
   </div>
   ) : "" }
     </aside>
