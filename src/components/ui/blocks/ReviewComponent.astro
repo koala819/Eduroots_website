@@ -13,11 +13,11 @@ interface Props {
 }
 ---
 
-<div class="mt-6 lg:mt-10">
-  <div class="py-5">
-    <div class="text-center sm:flex sm:items-center sm:text-start">
-      <div class="shrink-0 pb-5 sm:flex sm:pb-0 sm:pe-5">
-        <!-- Avatar Group -->
+<div class="mt-6 lg:mt-10 flex justify-end">
+  <!-- <div class="py-5"> -->
+    <!-- <div class="text-center sm:flex sm:items-center sm:text-start"> -->
+      <!--<div class="shrink-0 pb-5 sm:flex sm:pb-0 sm:pe-5">
+         Avatar Group
         <div class="flex justify-center -space-x-3">
           {avatars?.map((src) => <Avatar src={src} alt="Avatar Description" />)}
           <span
@@ -28,14 +28,18 @@ interface Props {
             >
           </span>
         </div>
-      </div>
-      <div
+      </div>-->
+      <!-- <div
         class="mx-auto h-px w-32 border-t border-neutral-400 dark:border-neutral-500 sm:mx-0 sm:h-8 sm:w-auto sm:border-s sm:border-t-0"
       >
-      </div>
+      </div> -->
       <!-- Review Ratings -->
-      <div class="flex flex-col items-center sm:items-start">
-        <div class="flex items-baseline space-x-1 pt-5 sm:ps-5 sm:pt-0">
+      <div
+      class="flex flex-col items-center sm:items-start"
+      >
+        <div
+        class="flex items-baseline space-x-1 "
+        >
           <div class="flex space-x-1">
             <!-- Your star ratings -->
             {
@@ -50,12 +54,12 @@ interface Props {
             <Fragment set:html={rating} />
           </p>
         </div>
-        <div class="text-sm text-neutral-800 dark:text-neutral-200 sm:ps-5">
+        <div class="text-sm text-neutral-800 dark:text-neutral-200">
           <p>
             <Fragment set:html={reviews} />
           </p>
         </div>
       </div>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
 </div>
