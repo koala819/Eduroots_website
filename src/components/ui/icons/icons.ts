@@ -203,7 +203,7 @@ export const Icons = {
       },
     ],
     class:
-      "w-4.5 h-4.5 transition shrink-0 text-neutral-700 duration-300 group-hover:-translate-y-1",
+      "w-4.5 h-4.5 transition shrink-0 text-neutral-700 dark:text-neutral-300 duration-300 group-hover:-translate-y-1",
     width: 16,
     height: 16,
     viewBox: "0 0 16 16",
