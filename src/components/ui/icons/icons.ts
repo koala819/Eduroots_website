@@ -74,7 +74,7 @@ export const Icons = {
       },
     ],
     class:
-      "h-6 w-6 shrink-0 text-neutral-700 hs-tab-active:text-primary dark:text-neutral-300 dark:hs-tab-active:text-primary-light md:h-7 md:w-7",
+      "h-6 w-6 shrink-0 text-neutral-700 hs-tab-active:text-primary dark:text-neutral-300 dark:hs-tab-active:text-primary-dark md:h-7 md:w-7",
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
@@ -93,7 +93,7 @@ export const Icons = {
         d: "M12 19V5",
       },
     ],
-    class: "h-5 w-5 shrink-0 text-primary dark:text-primary-light",
+    class: "h-5 w-5 shrink-0 text-primary dark:text-primary-dark",
     width: 24,
     height: 24,
     viewBox: "0 0 24 24",
