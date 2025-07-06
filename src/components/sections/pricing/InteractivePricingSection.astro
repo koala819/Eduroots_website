@@ -76,116 +76,52 @@ const { pricing, id } = Astro.props;
 
     </div>
 
-    <!-- Pricing Cards -->
-    <div class="grid gap-6 md:grid-cols-3">
-      <!-- Pack 50 -->
-      <div class="relative rounded-xl border-2 border-primary/20 bg-primary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-primary-dark/20 dark:border-primary-dark/40 dark:shadow-lg" data-pack="50">
-        <div class="mb-4">
-          <h3 class="text-xl font-bold text-primary dark:text-primary-dark">
-            {pricing.packs.pack50.name}
+    <!-- Pricing Card -->
+    <div class="mx-auto max-w-2xl">
+      <div class="relative rounded-xl border-2 border-primary/20 bg-primary/5 p-8 shadow-lg transition-all duration-200 hover:shadow-xl dark:bg-primary-dark/20 dark:border-primary-dark/40">
+        <div class="mb-6 text-center">
+          <h3 class="text-2xl font-bold text-primary dark:text-primary-dark mb-2" id="pack-name">
+            Pack Start
           </h3>
           <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-            {pricing.packs.pack50.description}
+            Tarif adapté à la taille de votre établissement
           </p>
         </div>
 
-        <div class="mb-4">
-          <div class="flex items-baseline">
-            <span id="price-50" class="text-3xl font-bold text-primary dark:text-primary-dark">84.00</span>
-            <span class="ml-1 text-lg text-primary dark:text-primary-dark">€</span>
-            <span id="period-50" class="ml-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
+        <div class="mb-6">
+          <div class="flex items-baseline justify-center">
+            <span id="total-price" class="text-4xl font-bold text-primary dark:text-primary-dark">80.00</span>
+            <span class="ml-1 text-xl text-primary dark:text-primary-dark">€</span>
+            <span id="period" class="ml-2 text-lg text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
           </div>
-          <div class="mt-2">
-            <span id="price-per-student-50" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              Seulement 1.68€ par élève
+          <div class="mt-2 text-center">
+            <span id="price-per-student" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
+              Tarif de base : 80€/mois jusqu'à 50 élèves
             </span>
           </div>
         </div>
 
-        <ul class="mb-6 space-y-2">
-          {pricing.packs.pack50.features.map((feature: string) => (
-              <li class="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              <Icon name="checkCircle" class="h-4 w-4 text-primary dark:text-primary-dark" />
-              <span>{feature}</span>
+        <div class="mb-6">
+          <h4 class="font-semibold text-neutral-800 dark:text-neutral-200 mb-3">Tarification progressive :</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-1a">
+              <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
+              <span id="tranche-1a-text" class="text-muted-foreground dark:text-muted-foreground-dark">80€/mois fixe (1-50 élèves)</span>
             </li>
-          ))}
-        </ul>
-
-        <div class="w-full">
-          <PrimaryCTA title={pricing.ctaText} url={pricing.ctaLink} noArrow={true} />
-        </div>
-      </div>
-
-      <!-- Pack 250 -->
-      <div class="relative rounded-xl border-2 border-secondary/20 bg-secondary/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-secondary-dark/20 dark:border-secondary-dark/40 dark:shadow-lg" data-pack="250">
-        <div class="mb-4">
-          <h3 class="text-xl font-bold text-secondary dark:text-secondary-dark">
-            {pricing.packs.pack250.name}
-          </h3>
-          <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-            {pricing.packs.pack250.description}
-          </p>
-        </div>
-
-        <div class="mb-4">
-          <div class="flex items-baseline">
-            <span id="price-250" class="text-3xl font-bold text-secondary dark:text-secondary-dark">240.00</span>
-            <span class="ml-1 text-lg text-secondary dark:text-secondary-dark">€</span>
-            <span id="period-250" class="ml-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
-          </div>
-          <div class="mt-2">
-            <span id="price-per-student-250" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              Seulement 0.96€ par élève
-            </span>
-          </div>
-        </div>
-
-        <ul class="mb-6 space-y-2">
-          {pricing.packs.pack250.features.map((feature: string) => (
-            <li class="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              <Icon name="checkCircle" class="h-4 w-4 text-secondary dark:text-secondary-dark" />
-              <span>{feature}</span>
+            <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-1b">
+              <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
+              <span id="tranche-1b-text" class="text-muted-foreground dark:text-muted-foreground-dark">80€ + 1.00€/élève supplémentaire (51-250 élèves)</span>
             </li>
-          ))}
-        </ul>
-
-        <div class="w-full">
-          <PrimaryCTA title={pricing.ctaText} url={pricing.ctaLink} noArrow={true} />
-        </div>
-      </div>
-
-      <!-- Pack 500 -->
-      <div class="relative rounded-xl border-2 border-accent/20 bg-accent/5 p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:bg-accent-dark/20 dark:border-accent-dark/40 dark:shadow-lg" data-pack="500">
-        <div class="mb-4">
-          <h3 class="text-xl font-bold text-accent dark:text-accent-dark">
-            {pricing.packs.pack500.name}
-          </h3>
-          <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-            {pricing.packs.pack500.description}
-          </p>
-        </div>
-
-        <div class="mb-4">
-          <div class="flex items-baseline">
-            <span id="price-500" class="text-3xl font-bold text-accent">360.00</span>
-            <span class="ml-1 text-lg text-accent">€</span>
-            <span id="period-500" class="ml-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">/mois</span>
-          </div>
-          <div class="mt-2">
-            <span id="price-per-student-500" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              Seulement 0.72€ par élève
-            </span>
-          </div>
-        </div>
-
-        <ul class="mb-6 space-y-2">
-          {pricing.packs.pack500.features.map((feature: string) => (
-            <li class="flex items-center gap-2 text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              <Icon name="checkCircle" class="h-4 w-4 text-accent dark:text-accent-dark" />
-              <span>{feature}</span>
+            <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-2">
+              <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
+              <span id="tranche-2-text" class="text-muted-foreground dark:text-muted-foreground-dark">240€ + 0.60€/élève supplémentaire (251-500 élèves)</span>
             </li>
-          ))}
-        </ul>
+            <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-3">
+              <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
+              <span id="tranche-3-text" class="text-muted-foreground dark:text-muted-foreground-dark">360€ + 0.44€/élève supplémentaire (501+ élèves)</span>
+            </li>
+          </ul>
+        </div>
 
         <div class="w-full">
           <PrimaryCTA title={pricing.ctaText} url={pricing.ctaLink} noArrow={true} />
@@ -233,21 +169,34 @@ const { pricing, id } = Astro.props;
 </style>
 
 <script>
-  // Pricing data
-  const pricingData = {
-    pack50: {
-      monthly: { base: 84, perStudent: 1.68, maxStudents: 50 },
-      yearly: { base: 504, perStudent: 0.84, maxStudents: 50 }
-    },
-    pack250: {
-      monthly: { base: 240, perStudent: 0.96, maxStudents: 250 },
-      yearly: { base: 1440, perStudent: 0.48, maxStudents: 250 }
-    },
-    pack500: {
-      monthly: { base: 360, perStudent: 0.72, maxStudents: 500 },
-      yearly: { base: 2160, perStudent: 0.36, maxStudents: 500 }
+      // Tarification progressive avec prix cibles
+  function calculatePrice(studentCount: number) {
+    let totalPrice = 0;
+    let packName = "";
+
+    if (studentCount <= 50) {
+      // 1-50 élèves : 80€/mois (prix fixe)
+      totalPrice = 80;
+      packName = "Tarif de base";
+    } else if (studentCount <= 250) {
+      // 51-250 élèves : 80 + (n-51) × 1,00€
+      const extraStudents = studentCount - 51;
+      totalPrice = 80 + (extraStudents * 1.00);
+      packName = "Tarif progressif";
+    } else if (studentCount <= 500) {
+      // 251-500 élèves : 240 + (n-251) × 0,60€
+      const extraStudents = studentCount - 251;
+      totalPrice = 240 + (extraStudents * 0.60);
+      packName = "Tarif avancé";
+    } else {
+      // 501+ élèves : 360 + (n-501) × 0,4375€
+      const extraStudents = studentCount - 501;
+      totalPrice = 360 + (extraStudents * 0.4375);
+      packName = "Tarif sur mesure";
     }
-  };
+
+    return { totalPrice, packName };
+  }
 
   // DOM elements
   const studentSlider = document.getElementById('student-slider') as HTMLInputElement;
@@ -257,55 +206,13 @@ const { pricing, id } = Astro.props;
   const progressFill = document.getElementById('progress-fill') as HTMLElement;
   const sliderThumb = document.getElementById('slider-thumb') as HTMLElement;
 
-  // Price elements
-  const priceElements = {
-    50: document.getElementById('price-50'),
-    250: document.getElementById('price-250'),
-    500: document.getElementById('price-500')
-  };
-
-  const periodElements = {
-    50: document.getElementById('period-50'),
-    250: document.getElementById('period-250'),
-    500: document.getElementById('period-500')
-  };
-
-  const pricePerStudentElements = {
-    50: document.getElementById('price-per-student-50'),
-    250: document.getElementById('price-per-student-250'),
-    500: document.getElementById('price-per-student-500')
-  };
-
   let isYearly = false;
 
-    // Calculate price for a pack
-  function calculatePrice(pack: keyof typeof pricingData, studentCount: number) {
-    const packData = pricingData[pack];
-    const billing = isYearly ? packData.yearly : packData.monthly;
 
-    if (studentCount <= billing.maxStudents) {
-      return billing.base;
-    } else {
-      const extraStudents = studentCount - billing.maxStudents;
-      return billing.base + (extraStudents * billing.perStudent);
-    }
-  }
 
-  // Calculate price per student
-  function calculatePricePerStudent(pack: keyof typeof pricingData, studentCount: number) {
-    const totalPrice = calculatePrice(pack, studentCount);
-    return (totalPrice / studentCount).toFixed(2);
-  }
 
-  // Get recommended pack based on student count
-  function getRecommendedPack(studentCount: number) {
-    if (studentCount === 0) return null; // No recommendation for 0 students
-    if (studentCount < 250) return '50';
-    if (studentCount < 500) return '250';
-    return '500';
-  }
 
-        // Update all prices
+                // Update all prices
   function updatePrices() {
     const students = parseInt(studentSlider.value);
 
@@ -313,13 +220,10 @@ const { pricing, id } = Astro.props;
       studentCount.textContent = students.toString();
     }
 
-                // Update slider background with correct percentage calculation
+    // Update slider background with correct percentage calculation
     const minStudents = 0;
     const maxStudents = 1000;
     const percentage = Math.min(100, Math.max(0, ((students - minStudents) / (maxStudents - minStudents)) * 100));
-
-            // Debug: log the values to see what's happening
-    console.log(`Students: ${students}, Percentage: ${percentage}%`);
 
     // Update the progress fill bar
     if (progressFill) {
@@ -331,49 +235,94 @@ const { pricing, id } = Astro.props;
       sliderThumb.style.left = `${percentage}%`;
     }
 
-    // Get recommended pack
-    const recommendedPack = getRecommendedPack(students);
+    // Calculate price
+    const { totalPrice: monthlyPrice, packName } = calculatePrice(students);
 
-    // Update prices for each pack
-    Object.keys(pricingData).forEach((packKey) => {
-      const pack = packKey as keyof typeof pricingData;
-      const packNumber = pack.replace('pack', '') as '50' | '250' | '500';
-      const totalPrice = calculatePrice(pack, students);
-      const pricePerStudent = calculatePricePerStudent(pack, students);
+    // Calcul annuel selon la tarification progressive (mensuel × 12 × 0.8)
+    let yearlyPrice;
+    if (students <= 50) {
+      yearlyPrice = 768; // 80€ × 12 × 0.8 = 768€
+    } else if (students <= 250) {
+      const extraStudents = students - 51;
+      yearlyPrice = 768 + (extraStudents * 9.6); // (80€ + extraStudents × 0.80€) × 12 × 0.8
+    } else if (students <= 500) {
+      const extraStudents = students - 251;
+      yearlyPrice = 2304 + (extraStudents * 5.76); // (240€ + extraStudents × 0.48€) × 12 × 0.8
+    } else {
+      const extraStudents = students - 501;
+      yearlyPrice = 3456 + (extraStudents * 4.2); // (360€ + extraStudents × 0.35€) × 12 × 0.8
+    }
 
-      // Update price display
-      if (priceElements[packNumber]) {
-        priceElements[packNumber]!.textContent = totalPrice.toFixed(2);
-      }
+    const totalPrice = isYearly ? yearlyPrice : monthlyPrice;
 
-      // Update period display
-      if (periodElements[packNumber]) {
-        periodElements[packNumber]!.textContent = isYearly ? '/an' : '/mois';
-      }
+    // Update price display
+    const totalPriceElement = document.getElementById('total-price');
+    const periodElement = document.getElementById('period');
+    const pricePerStudentElement = document.getElementById('price-per-student');
+    const packNameElement = document.getElementById('pack-name');
 
-      // Update price per student display
-      if (pricePerStudentElements[packNumber]) {
-        const packData = pricingData[pack];
-        const billing = isYearly ? packData.yearly : packData.monthly;
-        const basePricePerStudent = billing.perStudent;
+    if (totalPriceElement) {
+      totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
 
-        pricePerStudentElements[packNumber]!.textContent =
-          `Seulement ${basePricePerStudent.toFixed(2)}€ par élève`;
-      }
+    if (periodElement) {
+      periodElement.textContent = isYearly ? '/an' : '/mois';
+    }
 
-      // Update card styling based on recommendation
-      const cardElement = document.querySelector(`[data-pack="${packNumber}"]`) as HTMLElement;
-      if (cardElement) {
-                if (packNumber === recommendedPack) {
-          // Add highlight ring based on pack color
-          const ringColor = packNumber === '50' ? 'ring-primary' :
-                           packNumber === '250' ? 'ring-secondary' : 'ring-accent';
-          cardElement.classList.add('ring-2', ringColor, 'ring-offset-2', 'scale-105');
-          cardElement.classList.add('shadow-lg');
+    if (packNameElement) {
+      packNameElement.textContent = packName;
+    }
+
+    if (pricePerStudentElement) {
+      const pricePerStudent = totalPrice / students;
+      pricePerStudentElement.textContent =
+        isYearly
+          ? `Tarif annuel : ${pricePerStudent.toFixed(2)}€/élève/an`
+          : `Tarif mensuel : ${pricePerStudent.toFixed(2)}€/élève/mois`;
+    }
+
+    // Update tranche highlighting
+    updateTrancheHighlighting(students);
+  }
+
+  function updateTrancheHighlighting(students: number) {
+    const tranches = [
+      { id: 'tranche-1a', active: students <= 50 },
+      { id: 'tranche-1b', active: students > 50 && students <= 250 },
+      { id: 'tranche-2', active: students > 250 && students <= 500 },
+      { id: 'tranche-3', active: students > 500 }
+    ];
+
+    tranches.forEach(tranche => {
+      const element = document.getElementById(tranche.id);
+      if (element) {
+        const icon = element.querySelector('svg');
+        const text = element.querySelector('span');
+
+        if (tranche.active) {
+          // Tranche active
+          element.classList.add('bg-primary/10', 'border', 'border-primary/20', 'dark:bg-primary-dark/20', 'dark:border-primary-dark/40');
+          element.classList.remove('bg-transparent', 'border-transparent');
+          if (icon) {
+            icon.classList.remove('text-muted-foreground', 'dark:text-muted-foreground-dark');
+            icon.classList.add('text-primary', 'dark:text-primary-dark');
+          }
+          if (text) {
+            text.classList.remove('text-muted-foreground', 'dark:text-muted-foreground-dark');
+            text.classList.add('text-primary', 'dark:text-primary-dark', 'font-medium');
+          }
         } else {
-          // Remove highlight
-          cardElement.classList.remove('ring-2', 'ring-primary', 'ring-secondary', 'ring-accent', 'ring-offset-2', 'scale-105');
-          cardElement.classList.remove('shadow-lg');
+          // Tranche inactive
+          element.classList.remove('bg-primary/10', 'border', 'border-primary/20', 'dark:bg-primary-dark/20', 'dark:border-primary-dark/40');
+          element.classList.add('bg-transparent', 'border-transparent');
+          if (icon) {
+            icon.classList.remove('text-primary', 'dark:text-primary-dark');
+            icon.classList.add('text-muted-foreground', 'dark:text-muted-foreground-dark');
+          }
+          if (text) {
+            text.classList.remove('text-primary', 'dark:text-primary-dark', 'font-medium');
+            text.classList.add('text-muted-foreground', 'dark:text-muted-foreground-dark');
+          }
         }
       }
     });
@@ -391,13 +340,34 @@ const { pricing, id } = Astro.props;
       isYearly = false;
       updateBillingUI();
       updatePrices();
+      updateTrancheTexts();
     });
 
     yearlyBtn.addEventListener('click', () => {
       isYearly = true;
       updateBillingUI();
       updatePrices();
+      updateTrancheTexts();
     });
+  }
+
+  function updateTrancheTexts() {
+    const tranche1aText = document.getElementById('tranche-1a-text');
+    const tranche1bText = document.getElementById('tranche-1b-text');
+    const tranche2Text = document.getElementById('tranche-2-text');
+    const tranche3Text = document.getElementById('tranche-3-text');
+
+    if (isYearly) {
+      if (tranche1aText) tranche1aText.textContent = '768€/an fixe (1-50 élèves)';
+      if (tranche1bText) tranche1bText.textContent = '768€ + 9.60€/élève supplémentaire (51-250 élèves)';
+      if (tranche2Text) tranche2Text.textContent = '2304€ + 5.76€/élève supplémentaire (251-500 élèves)';
+      if (tranche3Text) tranche3Text.textContent = '3456€ + 4.20€/élève supplémentaire (501+ élèves)';
+    } else {
+      if (tranche1aText) tranche1aText.textContent = '80€/mois fixe (1-50 élèves)';
+      if (tranche1bText) tranche1bText.textContent = '80€ + 1.00€/élève supplémentaire (51-250 élèves)';
+      if (tranche2Text) tranche2Text.textContent = '240€ + 0.60€/élève supplémentaire (251-500 élèves)';
+      if (tranche3Text) tranche3Text.textContent = '360€ + 0.44€/élève supplémentaire (501+ élèves)';
+    }
   }
 
   function updateBillingUI() {
@@ -421,4 +391,5 @@ const { pricing, id } = Astro.props;
     // Initialize
   updatePrices();
   updateBillingUI();
+  updateTrancheTexts();
 </script>
