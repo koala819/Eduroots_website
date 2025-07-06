@@ -43,13 +43,13 @@ export const partnersData = [
         icon: `<img
             src="/mosquees/al-ihsane.jpg"
             alt="Mosquée Al-Ihsane"
-            class="mx-auto py-3 sm:mx-0 lg:py-5 grayscale opacity-70 hover:opacity-100 transition-opacity duration-300 dark:hidden"
+            class="mx-auto py-3 sm:mx-0 lg:py-5 dark:hidden"
             style="object-fit: contain; height: 240px; width: auto; mix-blend-mode: multiply;"
         />
         <img
             src="/mosquees/al-ihsane-dark.jpg"
             alt="Mosquée Al-Ihsane"
-            class="mx-auto py-3 sm:mx-0 lg:py-5"
+            class="mx-auto py-3 sm:mx-0 lg:py-5 hidden dark:block"
             style="object-fit: contain; height: 240px; width: auto; mix-blend-mode: screen;"
         />`,
         name: "Mosquée Al-Ihsane",

@@ -1,5 +1,4 @@
 ---
-// Define props from Astro
 const { title, subTitle, partners } = Astro.props;
 
 interface Partner {
@@ -8,7 +7,6 @@ interface Partner {
   href?: string;
 }
 
-// Define TypeScript interface for props
 interface Props {
   title: string;
   subTitle?: string;
