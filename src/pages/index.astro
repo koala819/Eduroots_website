@@ -15,9 +15,9 @@ import avatar1 from "@images/avatars/avatar1.jpg";
 import avatar2 from "@images/avatars/avatar2.jpg";
 import avatar3 from "@images/avatars/avatar3.jpg";
 import avatar4 from "@images/avatars/avatar4.jpg";
-import dashboard from "@images/dashboard-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
+import family from "@images/eduroots-tableau-bord-famille-mobile.webp";
+import admin from "@images/eduroots-tableau-bord-administratif-tablet.webp";
+import teacher from "@images/eduroots-tableau-bord-enseignant-desktop.webp";
 import features from "@data/features.json";
 import { partnersData } from "@/data_files/constants";
 
@@ -123,54 +123,51 @@ const avatarSrcs: Array<any> = [
 
   <FeaturesGeneral
     id="features"
-    title="Répondre aux besoins éducatifs modernes"
-    subTitle="Eduroots simplifie la gestion scolaire avec des outils pensés pour les enseignants, parents et administrateurs. Du suivi des élèves à la communication, tout est centralisé pour gagner du temps."
+    title="Un outil pensé pour et avec les mosquées"
+    subTitle="Eduroots est une application web légère, pensée dès le départ pour les mosquées. C'est une solution clé-en-main, simple à utiliser, évolutive et ouverte (open source)."
     src={featureImage}
     alt="Interface Eduroots montrant les différents modules"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Personnalisez <span class="text-primary dark:text-primary-light">Eduroots</span> selon les besoins spécifiques de votre établissement.`
+    title={`Un outil pensé pour et avec les <span class="text-primary dark:text-primary-dark">associations éducatives</span>`}
     tabs={[
       {
-        heading: "Gestion des élèves",
-        content:
-          "Centralisez toutes les informations de vos élèves : notes, absences, comportement, et bien plus. Interface intuitive pour un suivi efficace de la progression de chaque apprenant.",
-        svg: "users",
-        src: tools,
+        heading: "Pour les enseignants",
+        content: "Suivez les absences, les retards, le comportement et les notes de chaque élève. Gestion des groupes et niveaux simplifiée. Plus de fichiers Excel dispersés, tout est centralisé et accessible.",
+        svg: "books",
+        src: teacher,
         alt: "Interface de gestion des élèves Eduroots",
         first: true,
       },
       {
-        heading: "Tableaux de bord intuitifs",
-        content:
-          "Naviguez facilement avec les tableaux de bord Eduroots. Configurez et supervisez votre établissement en toute simplicité, avec des interfaces conçues pour une gestion fluide.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "Tableau de bord administratif Eduroots",
+        heading: "Pour les familles",
+        content: "Accès à un tableau de bord clair pour suivre la progression de vos enfants. Communication directe avec l'équipe pédagogique. Tout accessible depuis votre téléphone, en temps réel.",
+        svg: "house",
+        src: family,
+        alt: "Tableau de bord familial Eduroots",
         second: true,
       },
       {
-        heading: "Communication intégrée",
-        content:
-          "Simplifiez les échanges entre enseignants, parents et administration. Messagerie intégrée, notifications automatiques et système d'alertes pour une communication efficace.",
-        svg: "mail",
-        src: construction,
-        alt: "Système de messagerie intégré Eduroots",
+        heading: "Pour les administrateurs",
+        content: "Centralisez toutes les données de votre structure de manière sécurisée. Automatisez la gestion des groupes et des absences. Simplifiez la vie du bureau avec moins de tâches manuelles.",
+        svg: "tools",
+        src: admin,
+        alt: "Tableau de bord administratif Eduroots",
       },
     ]}
   />
 
   <!-- Section : Accompagnement humain -->
-  <section class="py-16">
+  <section class="py-16 bg-neutral-50 dark:bg-neutral-900">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-neutral-800 dark:text-neutral-200">
           Un accompagnement de A à Z, sur mesure
         </h2>
         <div class="prose prose-lg max-w-none dark:prose-invert mb-8">
-          <p class="text-lg">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300">
             Je ne vous livre pas juste un outil. Je vous accompagne dans sa mise en place, son adaptation et son appropriation.
           </p>
         </div>
@@ -180,29 +177,29 @@ const avatarSrcs: Array<any> = [
             <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-primary">1</span>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Échange personnalisé</h3>
-            <p>Vos pratiques réelles, pas de jargon, juste vos besoins concrets</p>
+            <h3 class="text-xl font-semibold mb-2 text-neutral-800 dark:text-neutral-200">Échange sur vos pratiques réelles</h3>
+            <p class="text-neutral-600 dark:text-neutral-400">Pas de jargon, juste vos besoins concrets</p>
           </div>
           <div class="text-center">
             <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-primary">2</span>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Démonstration adaptée</h3>
-            <p>Démonstration personnalisée d'Eduroots avec vos cas d'usage</p>
+            <h3 class="text-xl font-semibold mb-2 text-neutral-800 dark:text-neutral-200">Démonstration personnalisée</h3>
+            <p class="text-neutral-600 dark:text-neutral-400">Démonstration d'Eduroots avec vos cas d'usage</p>
           </div>
           <div class="text-center">
             <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-primary">3</span>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Mise en place</h3>
-            <p>Mise en place de l'outil dans votre structure</p>
+            <h3 class="text-xl font-semibold mb-2 text-neutral-800 dark:text-neutral-200">Mise en place</h3>
+            <p class="text-neutral-600 dark:text-neutral-400">Mise en place de l'outil dans votre structure</p>
           </div>
           <div class="text-center">
             <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-primary">4</span>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Formation et suivi</h3>
-            <p>Suivi humain et évolutions selon vos retours</p>
+            <h3 class="text-xl font-semibold mb-2 text-neutral-800 dark:text-neutral-200">Formation et suivi</h3>
+            <p class="text-neutral-600 dark:text-neutral-400">Suivi humain et évolutions selon vos retours</p>
           </div>
         </div>
       </div>
