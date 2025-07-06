@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
 import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
-import desktopImage from "@/images/eduroots-tableau-bord-administratif-desktop.webp";
 import mobileImage from "@/images/eduroots-tableau-bord-administratif-mobile.webp";
 
 const {
@@ -39,78 +38,55 @@ interface Props {
 }
 ---
 
-<!-- Defining a grid container that holds all the content -->
+<!-- Grid container avec texte à gauche et image à droite -->
 <section
-  class="mx-auto max-w-[85rem] gap-4 px-4 py-14 sm:px-6 md:gap-8 lg:px-8 2xl:max-w-full"
+  class="mx-auto  px-4 py-14 sm:px-6 md:gap-8 lg:px-8"
 >
-  <!-- Title and description - Maintenant en haut -->
-  <div class="text-center mb-8">
-    <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
-    <h1
-      class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
-    >
-      <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
-      <Fragment set:html={title} />
-    </h1>
-    {subTitle &&
-    <p
-      class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5 mx-auto"
-    >
-      {subTitle}
-    </p>
-  }
-    <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
-    <div class="mt-7 grid w-full gap-3 sm:inline-flex justify-center">
-      {primaryBtn &&
-      <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
-      }
-      {secondaryBtn &&
-      <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
-      }
-    </div>
-  </div>
-
-  <!-- Hero Image Section - Maintenant en dessous, centré -->
-  <div class="flex justify-center mt-10">
-    <aside class="relative w-full max-w-4xl">
-      <div class="relative w-full">
-        <div
-          class="relative aspect-[8/5] w-full max-h-[60vh]"
-        >
-          <Image
-            src={desktopImage}
-            alt="Tableau de bord administratif Eduroots sur ordinateur portable"
-            widths={[400, 800, 1200]}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1000px"
-            quality={85}
-            format="webp"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            class="h-full w-full scale-110"
-          />
-        </div>
-
-        <div
-          class="absolute -right-2 -bottom-4 w-[20%] md:-right-4 md:-bottom-12 md:w-[25%] lg:max-w-[150px]"
-        >
-          <Image
-            src={mobileImage}
-            alt="Interface mobile Eduroots pour la gestion scolaire"
-            widths={[150, 300]}
-            sizes="(max-width: 768px) 25vw, 150px"
-            quality={85}
-            format="webp"
-            loading="eager"
-            class="w-full h-auto"
-          />
-        </div>
+  <div class="grid lg:grid-cols-2 gap-8 items-center">
+    <!-- Colonne de gauche : Texte et boutons -->
+    <aside class="text-left">
+      <h1
+        class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-5xl lg:leading-tight"
+      >
+        <Fragment set:html={title} />
+      </h1>
+      {subTitle &&
+      <p
+        class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400"
+      >
+        {subTitle}
+      </p>
+    }
+      <!-- Action Button Section -->
+      <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+        {primaryBtn &&
+        <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
+        }
+        {secondaryBtn &&
+        <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
+        }
       </div>
     </aside>
-  </div>
 
-   <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
-    { withReview ? (
+    <!-- Colonne de droite : Image -->
+    <aside class="flex flex-col">
+          <picture class="w-full">
+            <Image
+              src={mobileImage}
+              alt="Interface mobile Eduroots pour la gestion scolaire"
+              widths={[150, 300, 600]}
+              sizes="100vw"
+              quality={100}
+              format="webp"
+              loading="eager"
+              class="w-full h-auto"
+            />
+          </picture>
+           { withReview ? (
+  <div class="flex justify-center">
     <ReviewComponent avatars={avatars} starCount={starCount} rating={rating} reviews={reviews} />
-    ) : "" }
+  </div>
+  ) : "" }
+    </aside>
+  </div>
 </section>
