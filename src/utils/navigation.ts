@@ -10,16 +10,16 @@ const footerLinks = [
   {
     section: "Plateforme",
     links: [
-      { name: "Gestion des élèves", url: "/#features" },
-      { name: "Communication", url: "/#features" },
-      { name: "Tableaux de bord", url: "/#features" },
+      { name: "Accueil", url: "/" },
       { name: "Tarifs", url: "/tarifs" },
+      { name: "Blog", url: "/blog" },
+      { name: "Contact", url: "/contact" },
     ],
   },
   {
     section: "Société",
     links: [
-      { name: "À propos d'Eduroots", url: "#" },
+      { name: "Qui suis-je ?", url: "/#qui-suis-je" },
       { name: "Mentions légales", url: "/mentions-legales" },
       { name: "RGPD", url: "/rgpd" },
       { name: "CGV", url: "/cgv" },
@@ -28,11 +28,8 @@ const footerLinks = [
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: "#",
-  x: "#",
   github: "https://github.com/eduroots/eduroots",
-  linkedin: "#",
-  youtube: "#",
+  linkedin: "https://linkedin.com/in/xavier-genolhac",
 };
 
 export default {

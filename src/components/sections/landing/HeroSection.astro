@@ -43,7 +43,7 @@ interface Props {
     <!-- Colonne de gauche : Texte et boutons -->
     <aside class="text-left">
       <h1
-        class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-5xl lg:leading-tight"
+        class="block !text-neutral-800 dark:!text-neutral-200"
       >
         <Fragment set:html={title} />
       </h1>
@@ -66,7 +66,7 @@ interface Props {
     </aside>
 
     <!-- Colonne de droite : Image -->
-    <aside class="flex flex-col">
+    <!-- <aside class="flex flex-col">
           <picture class="w-full">
             <Image
               src={mobileImage}
@@ -84,6 +84,6 @@ interface Props {
     <ReviewComponent starCount={starCount} rating={rating} reviews={reviews} />
   </div>
   ) : "" }
-    </aside>
+    </aside> -->
   </div>
 </section>

@@ -1,0 +1,165 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+const pageTitle =
+  "Mentions Légales | Eduroots - Plateforme de gestion scolaire open source";
+---
+
+<MainLayout title={pageTitle}>
+  <!-- Hero Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-primary-dark">
+          Mentions Légales
+        </h1>
+        <p class="text-lg ">
+          Transparence et conformité au cœur de nos services
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section >
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 legal-page">
+          <!-- Informations Générales -->
+          <div class="p-8 rounded-lg shadow-sm border">
+            <h2>
+              Informations Générales
+            </h2>
+            <ul class="space-y-2 ">
+              <li>
+                <span class="font-semibold text-primary dark:text-primary-dark">Nom du site web :</span> Eduroots
+              </li>
+              <li>
+                <span class="font-semibold text-primary dark:text-primary-dark">Numéro de Siret :</span> 85254837900019
+              </li>
+              <li>
+                <span class="font-semibold text-primary dark:text-primary-dark">Directeur de la publication :</span> Xavier GENOLHAC
+              </li>
+              <li>
+                <span class="font-semibold text-primary dark:text-primary-dark">Activité :</span> Développement et édition de logiciels de gestion scolaire
+              </li>
+              <li>
+                <span class="font-semibold text-primary dark:text-primary-dark">URL :</span> www.eduroots.org
+              </li>
+              <li>
+                <span class="font-semibold text-primary dark:text-primary-dark">Localisation :</span> 31470 Fonsorbes - France
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hébergement -->
+          <div class="p-8 rounded-lg shadow-sm border">
+            <h2>Hébergement</h2>
+            <p class="">Eduroots est hébergé par Vercel Inc.</p>
+            <p class="mt-4 ">
+              Vercel Inc.<br />
+              340 S Lemon Ave #4133<br />
+              Walnut, CA 91789<br />
+              USA
+            </p>
+          </div>
+
+          <!-- Utilisation de Cookies -->
+          <div class="p-8 rounded-lg shadow-sm border">
+            <h2>
+              Utilisation de Cookies
+            </h2>
+            <p class="text-neutral-600 dark:text-neutral-300">
+              En utilisant eduroots.org, vous acceptez notre utilisation de
+              cookies qui améliorent votre expérience et nous aident à suivre les
+              visites via Google Analytics. Ces cookies nous permettent d'analyser
+              l'utilisation du site afin d'en améliorer continuellement les
+              fonctionnalités.
+            </p>
+          </div>
+
+          <!-- Liens Hypertextes -->
+          <div class="p-8 rounded-lg shadow-sm border">
+            <h2>
+              Liens Hypertextes
+            </h2>
+            <p class="">
+              eduroots.org peut inclure des liens vers d'autres sites. Nous ne
+              sommes pas responsables de leur contenu ni de leurs pratiques de
+              confidentialité. Nous vous encourageons à lire les politiques de
+              confidentialité de chaque site que vous visitez.
+            </p>
+          </div>
+
+          <!-- Protection des Données Personnelles -->
+          <div class="md:col-span-2 p-8 rounded-lg shadow-sm border">
+            <h2>
+              Protection des Données Personnelles
+            </h2>
+            <p class="">
+              Vos données personnelles sont utilisées uniquement en interne et ne
+              sont ni vendues, ni échangées, ni louées à des tiers. Conformément au
+              Règlement Général sur la Protection des Données (RGPD) et à la loi
+              Informatique et Libertés, vous disposez des droits suivants :
+            </p>
+            <ul class="mt-4 list-disc space-y-2 pl-6 ">
+              <li>Droit d'accès à vos données personnelles</li>
+              <li>Droit de rectification de vos données personnelles</li>
+              <li>Droit à l'effacement de vos données personnelles</li>
+              <li>Droit à la limitation du traitement</li>
+              <li>Droit à la portabilité de vos données</li>
+              <li>Droit d'opposition au traitement</li>
+            </ul>
+            <p class="mt-4 ">
+              Pour exercer ces droits ou pour toute question relative à vos données
+              personnelles, veuillez nous contacter à l'adresse email : <a
+                href="mailto:x.genolhac@gmail.com"
+                class="text-primary dark:text-primary-dark hover:underline">x.genolhac@gmail.com</a
+              >.
+            </p>
+          </div>
+
+          <!-- Propriété Intellectuelle -->
+          <div class="md:col-span-2 p-8 rounded-lg shadow-sm border">
+            <h2>
+              Propriété Intellectuelle
+            </h2>
+            <p class="">
+              Eduroots est un logiciel open source. Le code source de l'application
+              est disponible sous licence MIT. Cette licence vous permet d'utiliser,
+              modifier et distribuer le code sous certaines conditions.
+            </p>
+            <p class="mt-4 ">
+              Les contenus textuels, graphiques et autres éléments de design
+              présents sur le site eduroots.org sont protégés par le droit
+              d'auteur et sont la propriété exclusive d'Eduroots, sauf mention
+              contraire.
+            </p>
+            <p class="mt-4 ">
+              Pour plus d'informations sur la licence et vos droits d'utilisation,
+              veuillez consulter notre dépôt GitHub ou nous contacter directement.
+            </p>
+          </div>
+    </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <PrimaryCTA
+          title="Retour à l'accueil"
+          url="/"
+          noArrow={true}
+        />
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+

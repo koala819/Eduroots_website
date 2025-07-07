@@ -1,0 +1,414 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const pageTitle =
+  "Protection des Données | Eduroots - Plateforme de gestion scolaire open source";
+---
+
+<MainLayout title={pageTitle}>
+  <div class="my-24"></div>
+  <!-- Espace vide pour pousser le contenu sous la navbar -->
+  <section id="protection-donnees" class="container mx-auto px-4 pb-16">
+    <h1 class="text-primary text-center">
+      Politique de Protection des Données
+    </h1>
+    <p class="text-center">
+      Eduroots s'engage à protéger votre vie privée et vos données personnelles
+    </p>
+
+    <div class="prose prose-lg mx-auto my-16 max-w-4xl">
+      <h2 id="introduction" class="text-primary">Introduction</h2>
+      <p>
+        Chez Eduroots, nous accordons une importance particulière à la protection
+        de vos données personnelles. Cette politique de confidentialité explique
+        comment nous collectons, utilisons, partageons et protégeons vos
+        informations lorsque vous utilisez notre plateforme de gestion scolaire.
+      </p>
+      <p>
+        Cette politique s'applique à tous les utilisateurs de la plateforme
+        Eduroots, qu'ils soient administrateurs d'établissements, enseignants,
+        élèves ou parents d'élèves.
+      </p>
+      <p>
+        En utilisant nos services, vous acceptez les pratiques décrites dans
+        cette politique de confidentialité. Nous vous invitons à la lire
+        attentivement.
+      </p>
+
+      <h2 id="responsable-traitement" class="text-primary">
+        Responsable du traitement
+      </h2>
+      <p>Le responsable du traitement de vos données personnelles est :</p>
+      <p class="ml-4">
+        <strong>Dix31</strong><br />
+        Auto-entrepreneur<br />
+        SIREN : 852548379<br />
+        Siège social : Toulouse (31300)<br />
+        Email : <a
+          href="mailto:contact@dix31.com"
+          class="text-primary hover:underline">contact@dix31.com</a
+        >
+      </p>
+      <p>Représenté par Xavier GENOLHAC, Directeur de la publication.</p>
+
+      <h2 id="donnees-collectees" class="text-primary">Données collectées</h2>
+      <p>
+        Dans le cadre de nos services, nous collectons différentes catégories de
+        données personnelles en fonction du type d'utilisateur :
+      </p>
+
+      <h3 id="donnees-base" class="font-semibold">
+        Données de base (pour tous les utilisateurs)
+      </h3>
+      <ul>
+        <li>Nom et prénom</li>
+        <li>Adresse email</li>
+        <li>Numéro de téléphone (facultatif)</li>
+        <li>
+          Adresse postale (pour les administrateurs d'établissements uniquement)
+        </li>
+        <li>Identifiants de connexion (cryptés)</li>
+        <li>Données de connexion (dates, heures, adresses IP)</li>
+      </ul>
+
+      <h3 id="donnees-specifiques" class="font-semibold">
+        Données spécifiques selon le profil utilisateur
+      </h3>
+      <ul>
+        <li>
+          <strong>Pour les administrateurs</strong> : fonction dans l'établissement,
+          niveau d'accès
+        </li>
+        <li>
+          <strong>Pour les enseignants</strong> : matières enseignées, classes attribuées
+        </li>
+        <li>
+          <strong>Pour les élèves</strong> : date de naissance, classe, résultats
+          scolaires, absences
+        </li>
+        <li><strong>Pour les parents</strong> : lien avec l'élève</li>
+      </ul>
+
+      <h2 id="finalites-traitement" class="text-primary">
+        Finalités du traitement
+      </h2>
+      <p>
+        Nous collectons et traitons vos données personnelles uniquement pour les
+        finalités suivantes :
+      </p>
+      <ul>
+        <li>Permettre l'accès et l'utilisation de la plateforme Eduroots</li>
+        <li>Gérer les comptes utilisateurs et les profils</li>
+        <li>
+          Assurer le suivi pédagogique et la communication entre les différents
+          acteurs de l'établissement
+        </li>
+        <li>Assurer le suivi et la relation client</li>
+        <li>Améliorer la qualité du service et des fonctionnalités</li>
+        <li>Adresser des communications relatives au service</li>
+        <li>Répondre aux demandes de support technique</li>
+        <li>Assurer la sécurité de la plateforme et des données</li>
+      </ul>
+
+      <h2 id="base-legale" class="text-primary">Base légale du traitement</h2>
+      <p>
+        Le traitement de vos données personnelles est fondé sur les bases
+        légales suivantes :
+      </p>
+      <ul>
+        <li>
+          <strong>L'exécution du contrat</strong> : le traitement est nécessaire
+          à l'exécution du contrat d'abonnement à la plateforme Eduroots ou à l'exécution
+          de mesures précontractuelles prises à votre demande.
+        </li>
+        <li>
+          <strong>Votre consentement</strong> : pour certains traitements spécifiques,
+          nous recueillons votre consentement explicite.
+        </li>
+        <li>
+          <strong>Les obligations légales</strong> : certains traitements peuvent
+          être nécessaires pour respecter nos obligations légales.
+        </li>
+        <li>
+          <strong>Nos intérêts légitimes</strong> : dans certains cas, le traitement
+          peut être justifié par nos intérêts légitimes, tels que la sécurité de
+          notre plateforme ou l'amélioration de nos services.
+        </li>
+      </ul>
+
+      <h2 id="destinataires" class="text-primary">Destinataires des données</h2>
+      <p>Les données personnelles collectées sont accessibles :</p>
+      <ul>
+        <li>
+          Aux membres de l'équipe Eduroots strictement habilités à les traiter
+        </li>
+        <li>
+          Aux administrateurs des établissements scolaires dans le cadre de la
+          gestion de leur établissement
+        </li>
+        <li>
+          À certains prestataires techniques partenaires (hébergement, paiement)
+          strictement nécessaires à l'exécution du service
+        </li>
+      </ul>
+      <p>
+        Aucune donnée n'est transférée à d'autres tiers sans le consentement
+        explicite des personnes concernées, sauf obligation légale.
+      </p>
+
+      <h2 id="transfert-international" class="text-primary">
+        Transfert international de données
+      </h2>
+      <p>
+        Nos serveurs sont hébergés par Vercel Inc., dont les serveurs peuvent
+        être situés dans l'Union Européenne et aux États-Unis. Tout transfert de
+        données hors de l'Union Européenne est encadré par des garanties
+        appropriées conformément au RGPD, notamment par l'utilisation de clauses
+        contractuelles types approuvées par la Commission Européenne.
+      </p>
+
+      <h2 id="duree-conservation" class="text-primary">
+        Durée de conservation
+      </h2>
+      <p>
+        Nous conservons vos données personnelles aussi longtemps que nécessaire
+        pour fournir nos services et atteindre les finalités décrites dans cette
+        politique.
+      </p>
+      <ul>
+        <li>
+          Les données sont conservées pendant toute la durée de la relation
+          contractuelle
+        </li>
+        <li>
+          Les données sont conservées pendant une période de 24 mois après la
+          fin de cette relation, sauf obligations légales plus longues
+        </li>
+        <li>
+          Les données inactives sont automatiquement archivées après 12 mois
+          d'inactivité
+        </li>
+        <li>
+          Les logs de connexion sont conservés pendant 1 an conformément à la
+          législation en vigueur
+        </li>
+      </ul>
+
+      <h2 id="droits" class="text-primary">Vos droits</h2>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données (RGPD)
+        et à la loi Informatique et Libertés, vous disposez des droits suivants
+        concernant vos données personnelles :
+      </p>
+      <ul>
+        <li>
+          <strong>Droit d'accès</strong> : vous pouvez obtenir une copie de vos données
+          personnelles que nous détenons
+        </li>
+        <li>
+          <strong>Droit de rectification</strong> : vous pouvez demander la correction
+          des données inexactes ou incomplètes
+        </li>
+        <li>
+          <strong>Droit à l'effacement</strong> : vous pouvez demander la suppression
+          de vos données personnelles dans certaines circonstances
+        </li>
+        <li>
+          <strong>Droit à la limitation du traitement</strong> : vous pouvez demander
+          la restriction du traitement de vos données dans certaines circonstances
+        </li>
+        <li>
+          <strong>Droit à la portabilité</strong> : vous pouvez recevoir vos données
+          personnelles dans un format structuré et les transmettre à un autre responsable
+          de traitement
+        </li>
+        <li>
+          <strong>Droit d'opposition</strong> : vous pouvez vous opposer au traitement
+          de vos données personnelles dans certaines circonstances
+        </li>
+        <li>
+          <strong>Droit de retirer votre consentement</strong> à tout moment, lorsque
+          le traitement est basé sur votre consentement
+        </li>
+        <li>
+          <strong>Droit d'introduire une réclamation</strong> auprès de la CNIL (www.cnil.fr)
+        </li>
+      </ul>
+
+      <h2 id="exercer-droits" class="text-primary">
+        Comment exercer vos droits
+      </h2>
+      <p>Vous disposez de plusieurs moyens pour exercer vos droits :</p>
+      <ol>
+        <li>
+          <strong>Via l'interface d'administration</strong> : Les administrateurs
+          de l'établissement peuvent gérer directement les comptes utilisateurs (enseignants,
+          élèves, parents) depuis leur espace d'administration dans l'application
+          Eduroots.
+        </li>
+        <li>
+          <strong>Par demande écrite</strong> : Vous pouvez exercer vos droits en
+          adressant un email à <a
+            href="mailto:contact@dix31.com"
+            class="text-primary hover:underline">contact@dix31.com</a
+          > ou un courrier recommandé à l'adresse du siège social d'Eduroots, en précisant
+          votre identité et l'objet de votre demande.
+        </li>
+      </ol>
+      <p>
+        Nous nous engageons à répondre à vos demandes dans un délai maximum d'un
+        mois à compter de la réception. Ce délai peut être prolongé de deux mois
+        supplémentaires en cas de demande complexe ou de nombre élevé de
+        demandes.
+      </p>
+
+      <h2 id="suppression-donnees" class="text-primary">
+        Suppression des données personnelles
+      </h2>
+      <p>
+        Pour exercer votre droit à l'effacement de vos données personnelles,
+        vous disposez des moyens suivants :
+      </p>
+      <ol>
+        <li>
+          <strong>Via l'interface d'administration</strong> : Les administrateurs
+          de l'établissement peuvent supprimer directement les comptes utilisateurs
+          (enseignants, élèves, parents) depuis leur espace d'administration dans
+          l'application Eduroots.
+        </li>
+        <li>
+          <strong>Par demande écrite</strong> : Toute personne peut demander la suppression
+          de ses données personnelles en adressant un email à <a
+            href="mailto:contact@dix31.com"
+            class="text-primary hover:underline">contact@dix31.com</a
+          > ou un courrier recommandé à l'adresse du siège social d'Eduroots, en précisant
+          son identité et les données concernées.
+        </li>
+        <li>
+          <strong>En cas de résiliation</strong> : Lors de la résiliation de l'abonnement,
+          le client peut demander la suppression complète des données de son établissement.
+          Un délai de 30 jours sera respecté avant la suppression définitive pour
+          permettre une éventuelle sauvegarde.
+        </li>
+        <li>
+          <strong>Limitation de conservation</strong> : Les données inactives sont
+          automatiquement archivées après 12 mois d'inactivité et supprimées après
+          24 mois, sauf obligation légale de conservation plus longue.
+        </li>
+      </ol>
+
+      <h2 id="cookies" class="text-primary">Utilisation des cookies</h2>
+      <p>
+        Notre site web et notre plateforme utilisent des cookies pour améliorer
+        votre expérience utilisateur. Les cookies sont de petits fichiers texte
+        stockés sur votre appareil qui nous permettent d'analyser l'utilisation
+        de nos services.
+      </p>
+      <p>Nous utilisons principalement :</p>
+      <ul>
+        <li>
+          <strong>Cookies techniques</strong> : essentiels au fonctionnement de la
+          plateforme
+        </li>
+        <li>
+          <strong>Cookies analytiques</strong> : pour analyser l'utilisation du site
+          via Google Analytics afin d'en améliorer les fonctionnalités
+        </li>
+      </ul>
+      <p>
+        Vous pouvez configurer votre navigateur pour refuser les cookies ou être
+        alerté lorsque des cookies sont envoyés. Toutefois, certaines parties de
+        notre site ou de notre plateforme pourraient ne pas fonctionner
+        correctement si vous désactivez les cookies.
+      </p>
+
+      <h2 id="securite" class="text-primary">Sécurité des données</h2>
+      <p>
+        Nous mettons en œuvre des mesures techniques et organisationnelles
+        appropriées pour protéger vos données personnelles contre toute perte,
+        accès non autorisé, divulgation ou destruction accidentelle. Ces mesures
+        comprennent :
+      </p>
+      <ul>
+        <li>Le chiffrement des données sensibles</li>
+        <li>
+          L'authentification à deux facteurs pour les accès administrateurs
+        </li>
+        <li>Des audits de sécurité réguliers</li>
+        <li>La limitation des accès aux données personnelles</li>
+        <li>
+          La sensibilisation de notre personnel aux bonnes pratiques de sécurité
+        </li>
+      </ul>
+
+      <h2 id="mineurs" class="text-primary">
+        Protection des données des mineurs
+      </h2>
+      <p>
+        Notre plateforme est destinée à être utilisée dans un cadre scolaire et
+        peut donc traiter des données concernant des mineurs. Ces traitements
+        sont effectués sous la responsabilité des établissements scolaires
+        concernés, avec le consentement des parents ou représentants légaux
+        lorsque cela est requis par la législation applicable.
+      </p>
+      <p>
+        Nous accordons une attention particulière à la protection des données
+        des mineurs et mettons en place des mesures de sécurité renforcées pour
+        ces données.
+      </p>
+
+      <h2 id="modification-politique" class="text-primary">
+        Modification de la politique de confidentialité
+      </h2>
+      <p>
+        Nous nous réservons le droit de modifier cette politique de
+        confidentialité à tout moment. Toute modification substantielle sera
+        notifiée aux utilisateurs par email ou par un avis visible sur notre
+        plateforme au moins un mois avant son entrée en vigueur.
+      </p>
+      <p>
+        La date de dernière mise à jour figure en bas de cette page. Nous vous
+        encourageons à consulter régulièrement cette politique pour rester
+        informé de nos pratiques en matière de protection des données.
+      </p>
+
+      <h2 id="contact" class="text-primary">Contact</h2>
+      <p>
+        Pour toute question relative à cette politique de confidentialité ou à
+        la protection de vos données personnelles, vous pouvez nous contacter :
+      </p>
+      <ul>
+        <li>
+          Par email : <a
+            href="mailto:contact@dix31.com"
+            class="text-primary hover:underline">contact@dix31.com</a>
+        </li>
+        <li>Par courrier : Dix31, 31300 Toulouse</li>
+      </ul>
+
+      <div class="mt-8 text-right text-sm text-gray-600">
+        Politique mise à jour le 15 avril 2025
+      </div>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <a href="/" class="btn-primary">Retour à l'accueil</a>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  // Script pour modifier les liens de la navbar
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        if (window.location.pathname !== "/") {
+          e.preventDefault();
+          window.location.href = "/" + href;
+        }
+      });
+    });
+  });
+</script>

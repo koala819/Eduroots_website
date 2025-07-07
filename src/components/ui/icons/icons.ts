@@ -311,6 +311,24 @@ export const Icons = {
     fill: "currentColor",
     title: "GitHub",
   },
+  linkedinFooter: {
+    paths: [
+      {
+        d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+      },
+      {
+        d: "M2 9h4v12H2z",
+      },
+      {
+        d: "M4 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z",
+      },
+    ],
+    class:
+      "h-4 w-4 shrink-0 fill-current text-neutral-700 dark:text-neutral-400",
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    title: "LinkedIn",
+  },
   googleFooter: {
     paths: [
       {
