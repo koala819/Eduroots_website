@@ -20,7 +20,7 @@ const firstClass = first ? "" : "hidden";
 // Set class based on 'second' property
 // If 'second' is present, use an alternate style for the image
 const secondClass = second
-  ? "shadow-lg aspect-5/4 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 object-cover p-4 lg:aspect-auto rounded-xl border border-neutral-200/50 dark:border-neutral-600/50"
+  ? "shadow-lg aspect-5/4 bg-white dark:bg-neutral-900 object-cover lg:aspect-auto rounded-xl border border-neutral-200/50 dark:border-neutral-600/50"
   : "shadow-lg aspect-3/2 object-cover lg:aspect-auto rounded-xl border border-neutral-200/50 dark:border-neutral-600/50 bg-white dark:bg-neutral-900";
 
 /*
@@ -46,7 +46,7 @@ This is the full example:
   <Image
     src={src}
     alt={alt}
-    class={secondClass}
+    class={`${secondClass} mix-blend-mode-normal`}
     draggable={"false"}
     format={"avif"}
     loading={"eager"}

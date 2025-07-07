@@ -13,7 +13,7 @@
   --color-primary-accent: hsl(212.7, 35%, 40%);
 
   /* La couleur de fond principale de l'application */
-  --color-background: hsl(210, 20%, 98%);
+  --color-background: hsl(210, 25%, 96%);
   /* La couleur du texte principal */
   --color-foreground: hsl(212.7, 25%, 15%);
   /* La couleur du texte sur la couleur principale */
@@ -32,11 +32,11 @@
   --color-accent-foreground: hsl(210, 20%, 98%);
 
   /* Couleurs neutres */
-  --color-muted: hsl(212.7, 10%, 85%);
+  --color-muted: hsl(212.7, 15%, 75%);
   --color-muted-dark: hsl(212.7, 10%, 25%);
-  --color-muted-foreground: hsl(212.7, 10%, 40%);
+  --color-muted-foreground: hsl(212.7, 15%, 35%);
   --color-muted-foreground-dark: hsl(212.7, 10%, 75%);
-  --color-border: hsl(212.7, 15%, 85%);
+  --color-border: hsl(212.7, 20%, 80%);
   --color-input: hsl(212.7, 15%, 92%);
   --color-ring: hsl(212.7, 25%, 35%);
 
