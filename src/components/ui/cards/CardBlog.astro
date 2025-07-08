@@ -58,10 +58,10 @@ const cardImage = typeof blogEntry.data.cardImage === 'string'
         <AvatarBlog blogEntry={blogEntry} />
 
         <div class="ms-2.5 sm:ms-4">
-          <h4 class="font-bold text-neutral-50">
+          <h4 class="!font-bold !text-neutral-50">
             {blogEntry.data.author}
           </h4>
-          <p class="text-xs text-neutral-50/[.8]">
+          <p class="!text-xs !text-neutral-50/[.8]">
             {formatDate(blogEntry.data.pubDate)}
           </p>
         </div>
@@ -72,11 +72,11 @@ const cardImage = typeof blogEntry.data.cardImage === 'string'
   <div class="absolute inset-x-0 bottom-0 z-10">
     <div class="flex h-full flex-col p-4 sm:p-6">
       <h3
-        class="text-balance text-lg font-bold text-neutral-50 group-hover:text-neutral-50/[.8] sm:text-3xl"
+        class="!text-balance !text-lg !font-bold !text-neutral-50 group-hover:!text-neutral-50/[.8] sm:!text-3xl"
       >
         {blogEntry.data.title}
       </h3>
-      <p class="mt-2 text-pretty text-neutral-50/[.8]">
+      <p class="!mt-2 !text-pretty !text-neutral-50/[.8]">
         {blogEntry.data.description}
       </p>
     </div>
