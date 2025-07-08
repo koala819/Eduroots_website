@@ -1,0 +1,186 @@
+---
+// Import the necessary dependencies
+import Icon from "@components/ui/icons/Icon.astro";
+
+// Define TypeScript interface for roadmap item
+interface RoadmapItem {
+  status: "completed" | "in-progress" | "planned";
+  title: string;
+  description: string;
+  icon: string;
+  date?: string;
+}
+
+// Define roadmap data
+const roadmapItems: RoadmapItem[] = [
+  {
+    status: "completed",
+    title: "Gestion des plannings et groupes",
+    description: "Interface complète pour organiser les cours, les groupes et les niveaux",
+    icon: "groups",
+    date: "2024"
+  },
+  {
+    status: "completed",
+    title: "Suivi des élèves",
+    description: "Gestion des absences, retards, comportement et notes",
+    icon: "books",
+    date: "2024"
+  },
+  {
+    status: "completed",
+    title: "Tableaux de bord multi-profils",
+    description: "Interfaces adaptées pour enseignants, familles et administrateurs",
+    icon: "dashboard",
+    date: "2024"
+  },
+  {
+    status: "in-progress",
+    title: "Messagerie instantanée",
+    description: "Communication directe type WhatsApp entre parents et équipe pédagogique",
+    icon: "frame",
+    date: "2025"
+  },
+  {
+    status: "planned",
+    title: "Fiches de présence enseignants",
+    description: "Système de pointage et suivi des présences des enseignants",
+    icon: "verified",
+    date: "2025"
+  },
+  {
+    status: "planned",
+    title: "Gestion des paiements",
+    description: "Suivi des cotisations et paiements des cours",
+    icon: "tools",
+    date: "2025"
+  }
+];
+
+// Helper function to get status styles
+const getStatusStyles = (status: string) => {
+  switch (status) {
+    case "completed":
+      return {
+        dot: "bg-primary dark:bg-primary-dark",
+        border: "border-primary dark:border-primary-dark",
+        text: "text-primary dark:text-primary-dark",
+        bg: "bg-primary/5 dark:bg-primary-dark/10"
+      };
+    case "in-progress":
+      return {
+        dot: "bg-accent dark:bg-accent-dark",
+        border: "border-accent dark:border-accent-dark",
+        text: "text-accent dark:text-accent-dark",
+        bg: "bg-accent/5 dark:bg-accent-dark/10"
+      };
+    case "planned":
+      return {
+        dot: "bg-neutral-400 dark:bg-neutral-500",
+        border: "border-neutral-300 dark:border-neutral-600",
+        text: "text-neutral-600 dark:text-neutral-400",
+        bg: "bg-neutral-50 dark:bg-neutral-800/50"
+      };
+    default:
+      return {
+        dot: "bg-neutral-400 dark:bg-neutral-500",
+        border: "border-neutral-300 dark:border-neutral-600",
+        text: "text-neutral-600 dark:text-neutral-400",
+        bg: "bg-neutral-50 dark:bg-neutral-800/50"
+      };
+  }
+};
+
+// Helper function to get status text
+const getStatusText = (status: string) => {
+  switch (status) {
+    case "completed":
+      return "Terminé";
+    case "in-progress":
+      return "En développement";
+    case "planned":
+      return "Prévu (inch'Allah)";
+    default:
+      return "Prévu";
+  }
+};
+---
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-800 dark:text-neutral-200">
+          🚧 Eduroots évolue constamment
+        </h2>
+        <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
+          Ce n'est que le début ! Je développe Eduroots seul, avec l'intention ferme d'en faire un outil encore plus utile pour les écoles et organismes de formation.
+        </p>
+        <div class="inline-block bg-primary/10 dark:bg-primary-dark/10 border-l-4 border-primary dark:border-primary-dark px-6 py-4 rounded-r-lg">
+          <p class="font-medium text-primary dark:text-primary-dark">
+            ✅ Toutes les fonctionnalités à venir seront incluses sans surcoût, pour le bénéfice de tous.
+          </p>
+        </div>
+      </div>
+
+      <!-- Roadmap Timeline -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-6 top-0 bottom-0 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+
+        <!-- Timeline items -->
+        <div class="space-y-12">
+          {roadmapItems.map((item, index) => {
+            const styles = getStatusStyles(item.status);
+            return (
+              <div class="relative flex items-start gap-8">
+                <!-- Status indicator -->
+                <div class="relative flex-shrink-0">
+                  <div class={`w-12 h-12 rounded-full ${styles.bg} border-2 ${styles.border} flex items-center justify-center`}>
+                    <div class={`w-3 h-3 rounded-full ${styles.dot} ${item.status === 'in-progress' ? 'animate-pulse' : ''}`}></div>
+                  </div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <Icon name={item.icon} class="w-5 h-5 text-neutral-400 dark:text-neutral-500" />
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 pt-1">
+                  <div class="flex items-center gap-4 mb-3">
+                    <h3 class="text-xl font-semibold text-neutral-800 dark:text-neutral-200">
+                      {item.title}
+                    </h3>
+                    <span class={`text-xs font-medium px-3 py-1 rounded-full ${styles.bg} ${styles.text} border border-current/20`}>
+                      {getStatusText(item.status)}
+                    </span>
+                  </div>
+                  <p class="text-neutral-600 dark:text-neutral-400 mb-2 leading-relaxed">
+                    {item.description}
+                  </p>
+                  {item.date && (
+                    <p class="text-sm text-neutral-500 dark:text-neutral-500 font-medium">
+                      {item.date}
+                    </p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Personal message -->
+      <div class="mt-16 text-center">
+        <div class="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-sm border border-neutral-200 dark:border-neutral-700 max-w-2xl mx-auto">
+          <p class="text-neutral-600 dark:text-neutral-400 mb-3 text-lg">
+            Merci à tous ceux qui me font confiance 🙏
+          </p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-500">
+            Développé avec passion pour la communauté musulmane
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
