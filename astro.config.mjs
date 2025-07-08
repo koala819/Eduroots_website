@@ -14,10 +14,10 @@ export default defineConfig({
     service: {
       entrypoint: "astro/assets/services/sharp",
     },
-    // Optimisations avancées
-    quality: 85,
-    format: ["webp", "avif"],
-    densities: [1, 2],
+    // Optimisations agressives
+    quality: 70, // Réduire la qualité (défaut: 85)
+    format: ["webp", "avif"], // Formats modernes
+    densities: [1, 2], // Seulement 1x et 2x
   },
   output: "server",
   adapter: vercel(),
