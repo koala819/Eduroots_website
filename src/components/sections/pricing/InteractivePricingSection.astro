@@ -80,11 +80,9 @@ const { pricing, id } = Astro.props;
     <div class="mx-auto max-w-2xl">
       <div class="relative rounded-xl border-2 border-primary/20 bg-primary/5 p-8 shadow-lg transition-all duration-200 hover:shadow-xl dark:bg-primary-dark/20 dark:border-primary-dark/40">
         <div class="mb-6 text-center">
-          <h3 class="text-2xl font-bold text-primary dark:text-primary-dark mb-2" id="pack-name">
-            Pack Start
-          </h3>
+          <h3 class="text-2xl font-bold text-primary dark:text-primary-dark mb-2" id="pack-name" />
           <p class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-            Tarif adapté à la taille de votre établissement
+            Tarif adapté à la taille de votre communauté
           </p>
         </div>
 
@@ -96,7 +94,7 @@ const { pricing, id } = Astro.props;
           </div>
           <div class="mt-2 text-center">
             <span id="price-per-student" class="text-sm text-muted-foreground dark:text-muted-foreground-dark">
-              Tarif de base : 80€/mois jusqu'à 50 élèves
+              Tarif de base : 80€/mois jusqu'à 50 membres
             </span>
           </div>
         </div>
@@ -106,19 +104,19 @@ const { pricing, id } = Astro.props;
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-1a">
               <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
-              <span id="tranche-1a-text" class="text-muted-foreground dark:text-muted-foreground-dark">80€/mois fixe (1-50 élèves)</span>
+              <span id="tranche-1a-text" class="text-muted-foreground dark:text-muted-foreground-dark">80€/mois fixe (1-50 membres)</span>
             </li>
             <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-1b">
               <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
-              <span id="tranche-1b-text" class="text-muted-foreground dark:text-muted-foreground-dark">80€ + 1.00€/élève supplémentaire (51-250 élèves)</span>
+              <span id="tranche-1b-text" class="text-muted-foreground dark:text-muted-foreground-dark">80€ + 1.00€/membre supplémentaire (51-250 membres)</span>
             </li>
             <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-2">
               <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
-              <span id="tranche-2-text" class="text-muted-foreground dark:text-muted-foreground-dark">240€ + 0.60€/élève supplémentaire (251-500 élèves)</span>
+              <span id="tranche-2-text" class="text-muted-foreground dark:text-muted-foreground-dark">240€ + 0.60€/membre supplémentaire (251-500 membres)</span>
             </li>
             <li class="flex items-center gap-2 p-2 rounded-lg transition-all duration-200" id="tranche-3">
               <Icon name="checkCircle" class="h-4 w-4 text-muted-foreground dark:text-muted-foreground-dark" />
-              <span id="tranche-3-text" class="text-muted-foreground dark:text-muted-foreground-dark">360€ + 0.44€/élève supplémentaire (501+ élèves)</span>
+              <span id="tranche-3-text" class="text-muted-foreground dark:text-muted-foreground-dark">360€ + 0.44€/membre supplémentaire (501+ membres)</span>
             </li>
           </ul>
         </div>
@@ -175,21 +173,21 @@ const { pricing, id } = Astro.props;
     let packName = "";
 
     if (studentCount <= 50) {
-      // 1-50 élèves : 80€/mois (prix fixe)
+      // 1-50 membres : 80€/mois (prix fixe)
       totalPrice = 80;
       packName = "Tarif de base";
     } else if (studentCount <= 250) {
-      // 51-250 élèves : 80 + (n-51) × 1,00€
+      // 51-250 membres : 80 + (n-51) × 1,00€
       const extraStudents = studentCount - 51;
       totalPrice = 80 + (extraStudents * 1.00);
       packName = "Tarif progressif";
     } else if (studentCount <= 500) {
-      // 251-500 élèves : 240 + (n-251) × 0,60€
+      // 251-500 membres : 240 + (n-251) × 0,60€
       const extraStudents = studentCount - 251;
       totalPrice = 240 + (extraStudents * 0.60);
       packName = "Tarif avancé";
     } else {
-      // 501+ élèves : 360 + (n-501) × 0,4375€
+      // 501+ membres : 360 + (n-501) × 0,4375€
       const extraStudents = studentCount - 501;
       totalPrice = 360 + (extraStudents * 0.4375);
       packName = "Tarif sur mesure";
@@ -277,8 +275,8 @@ const { pricing, id } = Astro.props;
       const pricePerStudent = totalPrice / students;
       pricePerStudentElement.textContent =
         isYearly
-          ? `Tarif annuel : ${pricePerStudent.toFixed(2)}€/élève/an`
-          : `Tarif mensuel : ${pricePerStudent.toFixed(2)}€/élève/mois`;
+          ? `Tarif annuel : ${pricePerStudent.toFixed(2)}€/membre/an`
+          : `Tarif mensuel : ${pricePerStudent.toFixed(2)}€/membre/mois`;
     }
 
     // Update tranche highlighting
@@ -358,15 +356,15 @@ const { pricing, id } = Astro.props;
     const tranche3Text = document.getElementById('tranche-3-text');
 
     if (isYearly) {
-      if (tranche1aText) tranche1aText.textContent = '768€/an fixe (1-50 élèves)';
-      if (tranche1bText) tranche1bText.textContent = '768€ + 9.60€/élève supplémentaire (51-250 élèves)';
-      if (tranche2Text) tranche2Text.textContent = '2304€ + 5.76€/élève supplémentaire (251-500 élèves)';
-      if (tranche3Text) tranche3Text.textContent = '3456€ + 4.20€/élève supplémentaire (501+ élèves)';
+      if (tranche1aText) tranche1aText.textContent = '768€/an fixe (1-50 membres)';
+      if (tranche1bText) tranche1bText.textContent = '768€ + 9.60€/membre supplémentaire (51-250 membres)';
+      if (tranche2Text) tranche2Text.textContent = '2304€ + 5.76€/membre supplémentaire (251-500 membres)';
+      if (tranche3Text) tranche3Text.textContent = '3456€ + 4.20€/membre supplémentaire (501+ membres)';
     } else {
-      if (tranche1aText) tranche1aText.textContent = '80€/mois fixe (1-50 élèves)';
-      if (tranche1bText) tranche1bText.textContent = '80€ + 1.00€/élève supplémentaire (51-250 élèves)';
-      if (tranche2Text) tranche2Text.textContent = '240€ + 0.60€/élève supplémentaire (251-500 élèves)';
-      if (tranche3Text) tranche3Text.textContent = '360€ + 0.44€/élève supplémentaire (501+ élèves)';
+      if (tranche1aText) tranche1aText.textContent = '80€/mois fixe (1-50 membres)';
+      if (tranche1bText) tranche1bText.textContent = '80€ + 1.00€/membre supplémentaire (51-250 membres)';
+      if (tranche2Text) tranche2Text.textContent = '240€ + 0.60€/membre supplémentaire (251-500 membres)';
+      if (tranche3Text) tranche3Text.textContent = '360€ + 0.44€/membre supplémentaire (501+ membres)';
     }
   }
 
