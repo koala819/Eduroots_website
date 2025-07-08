@@ -39,7 +39,11 @@ const formSubTitle: string = "Je vous réponds sous 24h.";
         </h2>
         <!-- Form for user input with various input fields.-->
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form>
+        <form action="/api/contact" method="POST">
+          <!-- Honeypot field to catch bots -->
+          <div class="hidden">
+            <input type="text" name="emai" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
@@ -50,7 +54,7 @@ const formSubTitle: string = "Je vous réponds sous 24h.";
               <TextInput
                 id="hs-lastname-contacts"
                 label="Nom"
-                name="hs-firstname-contacts"
+                name="hs-lastname-contacts"
               />
             </div>
             <EmailContactInput id="hs-email-contacts" />
@@ -70,6 +74,18 @@ const formSubTitle: string = "Je vous réponds sous 24h.";
             <p class="text-sm text-neutral-600 dark:text-neutral-400">
               {formSubTitle}
             </p>
+          </div>
+
+          <!-- Message de statut -->
+          <div id="form-status" class="mt-4 hidden">
+            <div id="success-message" class="hidden rounded-lg bg-green-50 p-4 text-green-800 dark:bg-green-900/20 dark:text-green-400">
+              <p class="text-sm font-medium">Message envoyé avec succès !</p>
+              <p class="text-xs mt-1">Nous vous répondrons dans les 48 heures.</p>
+            </div>
+            <div id="error-message" class="hidden rounded-lg bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-400">
+              <p class="text-sm font-medium">Erreur lors de l'envoi</p>
+              <p id="error-text" class="text-xs mt-1">Veuillez réessayer plus tard.</p>
+            </div>
           </div>
         </form>
       </div>
@@ -114,4 +130,178 @@ const formSubTitle: string = "Je vous réponds sous 24h.";
       </div>
     </div>
   </div>
+
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Contact form script loaded');
+
+      const form = document.querySelector('form') as HTMLFormElement;
+      const formStatus = document.getElementById('form-status');
+      const successMessage = document.getElementById('success-message');
+      const errorMessage = document.getElementById('error-message');
+      const errorText = document.getElementById('error-text');
+      const submitButton = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+      console.log('Form elements found:', {
+        form: !!form,
+        formStatus: !!formStatus,
+        successMessage: !!successMessage,
+        errorMessage: !!errorMessage,
+        errorText: !!errorText,
+        submitButton: !!submitButton
+      });
+
+      if (form && formStatus && successMessage && errorMessage && errorText) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          console.log('Form submitted');
+
+          // Validation côté client
+          const firstName = (form.querySelector('[name="hs-firstname-contacts"]') as HTMLInputElement)?.value.trim();
+          const lastName = (form.querySelector('[name="hs-lastname-contacts"]') as HTMLInputElement)?.value.trim();
+          const email = (form.querySelector('[name="hs-email-contacts"]') as HTMLInputElement)?.value.trim();
+          const phone = (form.querySelector('[name="hs-phone-number"]') as HTMLInputElement)?.value.trim();
+          const message = (form.querySelector('[name="hs-about-contacts"]') as HTMLTextAreaElement)?.value.trim();
+
+          console.log('Form values:', { firstName, lastName, email, phone, message });
+
+          // Validation par champ
+          let hasErrors = false;
+          const fieldErrors: { [key: string]: string } = {};
+
+          // Validation prénom
+          if (!firstName) {
+            fieldErrors.firstName = 'Le prénom est requis';
+            hasErrors = true;
+          }
+
+          // Validation nom
+          if (!lastName) {
+            fieldErrors.lastName = 'Le nom est requis';
+            hasErrors = true;
+          }
+
+          // Validation email
+          if (!email) {
+            fieldErrors.email = 'L\'email est requis';
+            hasErrors = true;
+          } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              fieldErrors.email = 'Veuillez entrer une adresse email valide';
+              hasErrors = true;
+            }
+          }
+
+          // Validation téléphone
+          if (!phone) {
+            fieldErrors.phone = 'Le téléphone est requis';
+            hasErrors = true;
+          }
+
+          // Validation message
+          if (!message) {
+            fieldErrors.message = 'Le message est requis';
+            hasErrors = true;
+          }
+
+          // Afficher les erreurs par champ
+          Object.keys(fieldErrors).forEach(fieldName => {
+            const fieldElement = form.querySelector(`[name="hs-${fieldName}-contacts"]`) ||
+                                form.querySelector(`[name="hs-${fieldName}-number"]`) ||
+                                form.querySelector(`[name="hs-about-contacts"]`);
+
+            if (fieldElement) {
+              // Supprimer l'ancienne erreur
+              const existingError = fieldElement.parentElement?.querySelector('.field-error');
+              if (existingError) {
+                existingError.remove();
+              }
+
+              // Ajouter la nouvelle erreur
+              const errorDiv = document.createElement('div');
+              errorDiv.className = 'field-error text-red-600 text-xs mt-1';
+              errorDiv.textContent = fieldErrors[fieldName];
+              fieldElement.parentElement?.appendChild(errorDiv);
+            }
+          });
+
+          if (hasErrors) {
+            console.log('Validation errors:', fieldErrors);
+            return;
+          }
+
+          // Désactiver le bouton pendant l'envoi
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Envoi en cours...';
+          }
+
+          // Masquer les messages précédents
+          formStatus.classList.add('hidden');
+          successMessage.classList.add('hidden');
+          errorMessage.classList.add('hidden');
+
+          try {
+            console.log('Sending form data to /api/contact');
+            const formData = new FormData(form);
+
+            // Log des données envoyées
+            for (let [key, value] of formData.entries()) {
+              console.log(`${key}:`, value);
+            }
+
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              body: formData
+            });
+
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+
+            const result = await response.json();
+            console.log('Response JSON:', result);
+
+            formStatus.classList.remove('hidden');
+
+            if (response.ok && result.status === 200) {
+              successMessage.classList.remove('hidden');
+              form.reset();
+              console.log('Form submitted successfully');
+            } else {
+              errorMessage.classList.remove('hidden');
+              if (result.statusText) {
+                errorText.textContent = result.statusText;
+              } else {
+                errorText.textContent = 'Erreur lors de l\'envoi du message.';
+              }
+              console.log('Form submission failed:', result);
+            }
+          } catch (error) {
+            console.error('Fetch error:', error);
+            formStatus.classList.remove('hidden');
+            errorMessage.classList.remove('hidden');
+            errorText.textContent = 'Erreur de connexion. Vérifiez votre connexion internet et réessayez.';
+          } finally {
+            // Réactiver le bouton
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = 'Envoyer le message';
+            }
+          }
+        });
+
+        // Supprimer les erreurs quand l'utilisateur tape
+        const inputs = form.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+          input.addEventListener('input', function(this: HTMLInputElement | HTMLTextAreaElement) {
+            const errorElement = this.parentElement?.querySelector('.field-error');
+            if (errorElement) {
+              errorElement.remove();
+            }
+          });
+        });
+      }
+    });
+  </script>
 </section>

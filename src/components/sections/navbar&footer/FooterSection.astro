@@ -55,11 +55,27 @@ const crafted: string = "Fabriqué par";
           {sectionThreeTitle}
         </h3>
 
-        <form>
+        <form action="/api/newsletter" method="POST" id="newsletter-form">
+          <!-- Honeypot field to catch bots -->
+          <div class="hidden">
+            <input type="text" name="emai" tabindex="-1" autocomplete="off" />
+          </div>
           <EmailFooterInput />
           <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
             {sectionThreeContent}
           </p>
+
+          <!-- Message de statut -->
+          <div id="newsletter-status" class="mt-3 hidden">
+            <div id="newsletter-success" class="hidden rounded-lg bg-green-50 p-3 text-green-800 dark:bg-green-900/20 dark:text-green-400">
+              <p class="text-sm font-medium">Inscription réussie !</p>
+              <p class="text-xs mt-1">Vous recevrez nos prochaines actualités.</p>
+            </div>
+            <div id="newsletter-error" class="hidden rounded-lg bg-red-50 p-3 text-red-800 dark:bg-red-900/20 dark:text-red-400">
+              <p class="text-sm font-medium">Erreur lors de l'inscription</p>
+              <p id="newsletter-error-text" class="text-xs mt-1">Veuillez réessayer plus tard.</p>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -95,6 +111,65 @@ const crafted: string = "Fabriqué par";
       const year = new Date().getFullYear();
       const element = document.getElementById("current-year");
       element!.innerText = year.toString();
+
+      // Gestion du formulaire de newsletter
+      document.addEventListener('DOMContentLoaded', function() {
+        const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement;
+        const newsletterStatus = document.getElementById('newsletter-status');
+        const newsletterSuccess = document.getElementById('newsletter-success');
+        const newsletterError = document.getElementById('newsletter-error');
+        const newsletterErrorText = document.getElementById('newsletter-error-text');
+        const submitButton = newsletterForm?.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+        if (newsletterForm && newsletterStatus && newsletterSuccess && newsletterError && newsletterErrorText) {
+          newsletterForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Désactiver le bouton pendant l'envoi
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.textContent = 'Inscription...';
+            }
+
+            // Masquer les messages précédents
+            newsletterStatus.classList.add('hidden');
+            newsletterSuccess.classList.add('hidden');
+            newsletterError.classList.add('hidden');
+
+            try {
+              const formData = new FormData(newsletterForm);
+              const response = await fetch('/newsletter', {
+                method: 'POST',
+                body: formData
+              });
+
+              const result = await response.json();
+
+              newsletterStatus.classList.remove('hidden');
+
+              if (response.ok && result.status === 200) {
+                newsletterSuccess.classList.remove('hidden');
+                newsletterForm.reset();
+              } else {
+                newsletterError.classList.remove('hidden');
+                if (result.statusText) {
+                  newsletterErrorText.textContent = result.statusText;
+                }
+              }
+            } catch (error) {
+              newsletterStatus.classList.remove('hidden');
+              newsletterError.classList.remove('hidden');
+              newsletterErrorText.textContent = 'Erreur de connexion. Veuillez réessayer.';
+            } finally {
+              // Réactiver le bouton
+              if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'S\'abonner';
+              }
+            }
+          });
+        }
+      });
     </script>
   </div>
 </footer>
