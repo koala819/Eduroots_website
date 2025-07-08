@@ -50,9 +50,26 @@ const { pricing, id } = Astro.props;
         <label for="student-slider" class="text-lg font-medium text-neutral-800 dark:text-neutral-200">
           {pricing.sliderLabel}
         </label>
-        <span id="student-count" class="text-2xl font-bold text-primary dark:text-primary-dark">
-          50
-        </span>
+        <div class="flex items-center gap-3">
+          <!-- Boutons + et - -->
+          <button
+            id="decrease-btn"
+            class="w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 text-primary dark:bg-primary-dark/20 dark:hover:bg-primary-dark/30 dark:text-primary-dark flex items-center justify-center transition-all duration-200 border border-primary/20 dark:border-primary-dark/40"
+            aria-label="Diminuer le nombre de membres"
+          >
+            <Icon name="minus" class="h-4 w-4" />
+          </button>
+          <span id="student-count" class="text-2xl font-bold text-primary dark:text-primary-dark min-w-[3rem] text-center">
+            50
+          </span>
+          <button
+            id="increase-btn"
+            class="w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 text-primary dark:bg-primary-dark/20 dark:hover:bg-primary-dark/30 dark:text-primary-dark flex items-center justify-center transition-all duration-200 border border-primary/20 dark:border-primary-dark/40"
+            aria-label="Augmenter le nombre de membres"
+          >
+            <Icon name="plus" class="h-4 w-4" />
+          </button>
+        </div>
       </div>
 
       <!-- Custom slider container -->
@@ -72,8 +89,6 @@ const { pricing, id } = Astro.props;
           <div id="progress-fill" class="h-2 bg-gradient-to-r from-primary to-primary-light rounded-lg transition-all duration-300 dark:from-primary-dark dark:to-primary-dark" style="width: 5%"></div>
         </div>
       </div>
-
-
     </div>
 
     <!-- Pricing Card -->
@@ -282,6 +297,8 @@ const { pricing, id } = Astro.props;
   const yearlyBtn = document.getElementById('yearly-btn');
   const progressFill = document.getElementById('progress-fill') as HTMLElement;
   const sliderThumb = document.getElementById('slider-thumb') as HTMLElement;
+  const decreaseBtn = document.getElementById('decrease-btn');
+  const increaseBtn = document.getElementById('increase-btn');
 
   let isYearly = false;
 
@@ -425,6 +442,38 @@ const { pricing, id } = Astro.props;
       updateBillingUI();
       updatePrices();
       updateTrancheTexts();
+    });
+  }
+
+  // Event listeners pour les boutons + et -
+  if (decreaseBtn && increaseBtn && studentSlider) {
+    decreaseBtn.addEventListener('click', () => {
+      const currentValue = parseInt(studentSlider.value);
+      const newValue = Math.max(0, currentValue - 1);
+      studentSlider.value = newValue.toString();
+      updatePrices();
+    });
+
+    increaseBtn.addEventListener('click', () => {
+      const currentValue = parseInt(studentSlider.value);
+      const newValue = Math.min(1000, currentValue + 1);
+      studentSlider.value = newValue.toString();
+      updatePrices();
+    });
+
+    // Support clavier pour les boutons
+    decreaseBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        decreaseBtn.click();
+      }
+    });
+
+    increaseBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        increaseBtn.click();
+      }
     });
   }
 
