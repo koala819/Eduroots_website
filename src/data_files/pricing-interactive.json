@@ -1,7 +1,7 @@
 {
   "title": "Tarification Interactive et Transparente",
-  "subTitle": "Calculez votre tarif en fonction du nombre d'élèves. Choisissez le plan qui vous convient le mieux.",
-  "sliderLabel": "Nombre d'élèves",
+  "subTitle": "Calculez votre tarif en fonction du nombre de membres. Choisissez le plan qui vous convient le mieux.",
+  "sliderLabel": "Nombre de membres",
   "billingToggle": {
     "monthly": "Paiement mensuel",
     "yearly": "Paiement annuel",
@@ -17,14 +17,7 @@
       "yearlyPricePerStudent": 0.84,
       "monthlyExtraStudentPrice": 1.68,
       "yearlyExtraStudentPrice": 0.42,
-      "maxStudents": 50,
-      "features": [
-        "Gestion de 50 élèves",
-        "Messagerie intégrée",
-        "Suivi des absences",
-        "Support standard",
-        "Tableaux de bord basiques"
-      ]
+      "maxStudents": 50
     },
     "pack250": {
       "name": "Pack 250",
@@ -35,14 +28,7 @@
       "yearlyPricePerStudent": 0.48,
       "monthlyExtraStudentPrice": 0.96,
       "yearlyExtraStudentPrice": 0.24,
-      "maxStudents": 250,
-      "features": [
-        "Gestion de 250 élèves",
-        "Toutes les fonctionnalités du Pack 50",
-        "Tableaux de bord avancés",
-        "Rapports détaillés",
-        "Support prioritaire"
-      ]
+      "maxStudents": 250
     },
     "pack500": {
       "name": "Pack 500",
@@ -53,14 +39,7 @@
       "yearlyPricePerStudent": 0.36,
       "monthlyExtraStudentPrice": 0.72,
       "yearlyExtraStudentPrice": 0.18,
-      "maxStudents": 500,
-      "features": [
-        "Gestion de 500 élèves",
-        "Toutes les fonctionnalités du Pack 250",
-        "Gestion multi-sites",
-        "API personnalisée",
-        "Support dédié"
-      ]
+      "maxStudents": 500
     }
   },
   "ctaText": "Commencer maintenant",
