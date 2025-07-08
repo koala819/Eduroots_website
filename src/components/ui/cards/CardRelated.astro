@@ -9,7 +9,7 @@ import smartphoneMessagerie from "@images/blog/Smartphone_Messagerie.webp";
 import smartphoneEtoiles from "@images/blog/Smartphone_Etoiles.webp";
 import laptopStudents from "@images/blog/Laptop_Students_Often_Missed.webp";
 
-const { blogEntry, recentBlogLocale = "" } = Astro.props;
+const { blogEntry } = Astro.props;
 
 interface Props {
   blogEntry: CollectionEntry<"blog">;
@@ -30,9 +30,7 @@ const cardImage = typeof blogEntry.data.cardImage === 'string'
 
 <a
   class="group block rounded-xl outline-hidden ring-zinc-500 transition duration-300 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
-  href={recentBlogLocale && recentBlogLocale !== "en"
-    ? `/${recentBlogLocale}/blog/${blogEntry.id.replace(/^fr\//, "")}/`
-    : `/blog/${blogEntry.id.replace(/^en\//, "")}/`}
+  href={`/blog/${blogEntry.id}/`}
   data-astro-prefetch
 >
   <div>

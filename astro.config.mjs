@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
-
+import vercel from "@astrojs/vercel/serverless";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
@@ -12,29 +12,17 @@ export default defineConfig({
   image: {
     domains: ["images.unsplash.com"],
   },
-  // i18n: {
-  //   defaultLocale: "en",
-  //   locales: ["en", "fr"],
-  //   fallback: {
-  //     fr: "en",
-  //   },
-  //   routing: {
-  //     prefixDefaultLocale: false,
-  //   },
-  // },
+  output: "server",
+  adapter: vercel(),
   prefetch: true,
-  integrations: [sitemap({
-    i18n: {
-      defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
-      locales: {
-        en: "en", // The `defaultLocale` value must present in `locales` keys
-        fr: "fr",
-      },
-    },
-  }), compressor({
-    gzip: false,
-    brotli: true,
-  }), mdx()],
+  integrations: [
+    sitemap(),
+    compressor({
+      gzip: false,
+      brotli: true,
+    }),
+    mdx()
+  ],
   experimental: {
     clientPrerender: true,
   },
