@@ -11,6 +11,13 @@ export default defineConfig({
   site: "https://eduroots.org",
   image: {
     domains: ["images.unsplash.com"],
+    service: {
+      entrypoint: "astro/assets/services/sharp",
+    },
+    // Optimisations avancées
+    quality: 85,
+    format: ["webp", "avif"],
+    densities: [1, 2],
   },
   output: "server",
   adapter: vercel(),

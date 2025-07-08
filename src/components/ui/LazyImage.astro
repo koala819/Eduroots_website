@@ -1,0 +1,22 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  width?: number;
+  height?: number;
+}
+
+const { src, alt, class: className = "", width, height } = Astro.props;
+---
+
+<img
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  class={`${className} lazy`}
+  loading="lazy"
+  decoding="async"
+  onload="this.classList.remove('lazy')"
+/>

@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: any;
+  alt: string;
+  class?: string;
+  loading?: "lazy" | "eager";
+  sizes?: string;
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  class: className = "",
+  loading = "lazy",
+  sizes = "100vw",
+  quality = 85
+} = Astro.props;
+---
+
+<Image
+  src={src}
+  alt={alt}
+  widths={[300, 600, 900, 1200, 1800]}
+  sizes={sizes}
+  quality={quality}
+  format="webp"
+  loading={loading}
+  decoding="async"
+  class={className}
+/>
