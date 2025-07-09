@@ -20,6 +20,8 @@ import mosqueeAlIhsane from "@/images/al-ihsane.jpg";
 import xavierPhoto from "@/images/avatars/xavier.webp";
 import features from "@data/features.json";
 import { partnersData } from "@/data_files/constants";
+import InteractivePricingSection from "@components/sections/pricing/InteractivePricingSection.astro";
+import pricingInteractive from "@data/pricing-interactive.json";
 
 const pageTitle = "Accueil | Eduroots - Simplifiez la gestion de votre mosquée";
 ---
@@ -294,4 +296,5 @@ const pageTitle = "Accueil | Eduroots - Simplifiez la gestion de votre mosquée"
     subTitle="Eduroots est une plateforme open source, développée avec passion pour révolutionner la gestion scolaire."
     url="https://github.com/koala819/eduroots"
   />
+   <InteractivePricingSection pricing={pricingInteractive} />
 </MainLayout>
